@@ -1,5 +1,25 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const fs = require("fs");
+bot.commands = new Discord.Collection();
+
+fs.readdir("./commands/", (err, files) => {
+
+  if(err) console.log(err);
+
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    bot.commands.set(props.help.name, props);
+  });
+
+})
 
 var leaveMessages = [
   "didn't really like it here :(",
@@ -18,6 +38,12 @@ client.on("message", function(message) {
 client.on("message", function(message) {
   if (message.content === "hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
+  }
+});
+
+client.on("message", function(message) {
+  if (message.content === "test") {
+    message.channel.send("ok " + message.author.toString());
   }
 });
 
