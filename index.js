@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const prefix = "!"
 
 var leaveMessages = [
   "didn't really like it here :(",
@@ -25,6 +26,28 @@ client.on("message", function(message) {
   if (message.content === "test") {
     message.channel.send("ok " + message.author.toString());
   }
+});
+
+client.on("message", (message) => {
+
+  if(message.author.bot) return;
+  if(!message.content.startsWith(prefix)) return;
+
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  if(command === "8ball") {
+    var fortunes = ["Yes", "No", "Maybe", "Probably no", "Probably yes"]
+
+    var result = Math.floor((Math.random() * fortunes.length) + 0);
+
+    const embed = new Discord.RichEmbed()
+    .setTitle("8ball command")
+    .addField(args, fortunes[result])
+    message.channel.send({embed: embed})
+
+  }
+
 });
 
 client.on("guildMemberAdd", member => {
