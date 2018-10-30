@@ -21,11 +21,11 @@ client.on("message", function(message) {
   }
 });
 
-var messageJoin = member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out " +
+var messageJoin = " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out " +
   message.guild.channels.get('455022347225792532').toString() + " for any information, or ask a staff member! 💓 Enjoy your stay!";
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("455016389556568084").send(messageJoin);
+  member.guild.channels.get("455016389556568084").send(member.user.toString() + messageJoin);
 });
 
 client.on("guildMemberRemove", member => {
