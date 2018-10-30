@@ -11,13 +11,13 @@ var leaveMessages = [
 ];
 
 client.on("message", function(message) {
-  if (message.content === "ping") {
-    message.reply("pong");
+  if (message.content === "hello") {
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 client.on("message", function(message) {
-  if (message.content === "hello") {
+  if (message.content === "hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
@@ -67,11 +67,11 @@ client.on("message", (message) => {
 });
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("455016389556568084").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
+  member.guild.channels.get("506563742352277507").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
 });
 
 client.on("guildMemberRemove", member => {
-  member.guild.channels.get("455016389556568084").send("**" + member.user.username + "** " + leaveMessages[Math.floor(Math.random() * leaveMessages.length)]);
+  member.guild.channels.get("506551891841253406").send("**" + member.user.username + "** " + leaveMessages[Math.floor(Math.random() * leaveMessages.length)]);
 });
 
 client.on("ready", () => {
