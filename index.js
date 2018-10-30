@@ -37,7 +37,20 @@ client.on("message", (message) => {
   const command = args.shift().toLowerCase();
 
   if(command === "8ball") {
-    var fortunes = ["Yes", "No", "Maybe", "Probably no", "Probably yes"]
+    var fortunes = [
+    "Yes",
+    "No",
+    "Maybe",
+    "Definitely!",
+    "Ask me later..",
+    "Fuck u",
+    "I'm not sure",
+    "Probably",
+    "I doubt..",
+    "Who? Me?",
+    "Sorry, I'm too lazy to answer",
+    "I thought you know the answer"
+    ];
 
     var result = Math.floor((Math.random() * fortunes.length) + 0);
 
@@ -45,7 +58,8 @@ client.on("message", (message) => {
   .setColor(0xb798f2)
   .setThumbnail("http://iconbug.com/data/95/256/8696325e0e7407823058632e68fb5970.png")
   .setTitle("Results:")
-  .addField(args, fortunes[result]);
+  .addField(args, " - ")
+  .addField(" - ", fortunes[result]);
   message.channel.send({embed});
 
   }
