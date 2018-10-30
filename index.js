@@ -37,7 +37,7 @@ client.on("guildMemberRemove", member => {
 
 client.on("ready", () => {
 
-  client.user.setGame("!help")
+  client.user.setGame("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸")
 
 });
 
