@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.on("ready", => {
+client.on("ready", () => {
   console.log("Help please")
 });
 
-client.on("message", message => {
+client.on("message", function(message) {
   if (message.content === "ping") {
     message.reply("pong");
   }
