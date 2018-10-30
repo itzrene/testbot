@@ -35,4 +35,10 @@ client.on("guildMemberRemove", member => {
   member.guild.channels.get("455016389556568084").send("**" + member.user.username + "** " + leaveMessages[Math.floor(Math.random() * leaveMessages.length)]);
 });
 
+client.on("ready" () => {
+
+  client.user.setActivity("basics", {type: "WATCHING"});
+  
+});
+
 client.login(process.env.BOT_TOKEN);
