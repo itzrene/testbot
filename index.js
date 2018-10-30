@@ -42,35 +42,26 @@ client.on("message", (message) => {
     var result = Math.floor((Math.random() * fortunes.length) + 0);
 
     const embed = new Discord.RichEmbed()
-    .setTitle("8ball command")
-    .addField(args, fortunes[result])
-    message.channel.send({embed: embed})
+    embed=discord.Embed(color=0xxdeb0f2)
+    embed.set_thumbnail(url="http://iconbug.com/data/95/256/8696325e0e7407823058632e68fb5970.png")
+    embed.add_field(name=Results, value=args, fortunes[result], inline=False)
+    await self.bot.say(embed=embed)
 
   }
 
 });
 
 client.on("guildMemberAdd", member => {
-  const embed = new Discord.RichEmbed()
-  .setTitle("8ball command")
-  .addField(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!")
-  member.guild.channels.get("455016389556568084").send({embed: embed})
-
+  member.guild.channels.get("455016389556568084").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
 });
 
 client.on("guildMemberRemove", member => {
   member.guild.channels.get("455016389556568084").send("**" + member.user.username + "** " + leaveMessages[Math.floor(Math.random() * leaveMessages.length)]);
 });
 
-/*client.on("ready", () => {
-
-  client.user.setGame("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸")
-
-});*/
-
 client.on("ready", () => {
 
-  client.user.setGame("| testing")
+  client.user.setGame("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸")
 
 });
 
