@@ -42,7 +42,7 @@ client.on("message", (message) => {
     var result = Math.floor((Math.random() * fortunes.length) + 0);
 
     const embed = new Discord.RichEmbed()
-    embed=discord.Embed(color=0xxdeb0f2)
+    embed.setColor(0xxdeb0f2)
     embed.set_thumbnail(url="http://iconbug.com/data/95/256/8696325e0e7407823058632e68fb5970.png")
     embed.add_field(name=Results, value=args, fortunes[result], inline=False)
     await self.bot.say(embed=embed)
