@@ -11,4 +11,8 @@ client.on("guildMemberAdd", member => {
   member.guild.channels.get("455016389556568084").send("**" + member.user.username + "** has joined the server!");
 });
 
+client.on("guildMemberRemove", member => {
+  member.guild.channels.get("455016389556568084").send("**" + member.user.username + "** has left the server!");
+});
+
 client.login(process.env.BOT_TOKEN);
