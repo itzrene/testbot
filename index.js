@@ -51,16 +51,26 @@ client.on("message", (message) => {
 });
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("455016389556568084").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
+  const embed = new Discord.RichEmbed()
+  .setTitle("8ball command")
+  .addField(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!")
+  member.guild.channels.get("455016389556568084").send({embed: embed})
+
 });
 
 client.on("guildMemberRemove", member => {
   member.guild.channels.get("455016389556568084").send("**" + member.user.username + "** " + leaveMessages[Math.floor(Math.random() * leaveMessages.length)]);
 });
 
-client.on("ready", () => {
+/*client.on("ready", () => {
 
   client.user.setGame("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸")
+
+});*/
+
+client.on("ready", () => {
+
+  client.user.setGame("| testing")
 
 });
 
