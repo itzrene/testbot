@@ -7,6 +7,12 @@ client.on("message", function(message) {
   }
 });
 
+client.on("message", function(message) {
+  if (message.content === "hello") {
+    message.channel.send("bye" + message.author.toString());
+  }
+});
+
 client.on("guildMemberAdd", member => {
   member.guild.channels.get("455016389556568084").send("**" + member.user.username + "** has joined the server!");
 });
