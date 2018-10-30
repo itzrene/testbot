@@ -22,7 +22,7 @@ client.on("message", function(message) {
 });
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("455016389556568084").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out " + member.guild.channels.get('455022347225792532').toString() + " for any information, or ask a staff member! 💓 Enjoy your stay!");
+  member.guild.channels.get("455016389556568084").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
 });
 
 client.on("guildMemberRemove", member => {
