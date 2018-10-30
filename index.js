@@ -37,8 +37,8 @@ client.on("guildMemberRemove", member => {
 
 client.on("ready" () => {
 
-  client.user.setActivity("basics", {type: "WATCHING"});
-  
+  client.user.setGame("!help")
+
 });
 
 client.login(process.env.BOT_TOKEN);
