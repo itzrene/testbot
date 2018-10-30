@@ -42,11 +42,11 @@ client.on("message", (message) => {
     var result = Math.floor((Math.random() * fortunes.length) + 0);
 
     const embed = new Discord.RichEmbed()
-  .setColor(0x00AE86)
+  .setColor(0xb798f2)
   .setThumbnail("http://iconbug.com/data/95/256/8696325e0e7407823058632e68fb5970.png")
   .setTitle("Results:")
   .addField(args, fortunes[result], true)
-  message.channel.send({embed});
+  message.channel.send({embed: embed})
 
   }
 
@@ -62,7 +62,7 @@ client.on("guildMemberRemove", member => {
 
 client.on("ready", () => {
 
-  client.user.setGame("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸")
+  client.user.setGame("| ready
 
 });
 
