@@ -23,11 +23,11 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("guildMemberAdd", member => {
-  message.guild.channels.find(`name`, "reports").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
+  bot.guild.channels.find(`name`, "reports").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
 });
 
 bot.on("guildMemberRemove", member => {
-  message.guild.channels.find(`name`, "reports").send("**" + member.user.username + "**");
+  bot.guild.channels.find(`name`, "reports").send("**" + member.user.username + "**");
 });
 
 bot.on("ready", async () => {
