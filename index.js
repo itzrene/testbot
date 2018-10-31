@@ -28,6 +28,7 @@ if(cmd === `${prefix}report`){
       return;
 
     }
+  };
 
 var leaveMessages = [
   "didn't really like it here :(",
