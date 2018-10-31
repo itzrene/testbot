@@ -2,27 +2,32 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "!"
 
-const fs = require("fs");
-const bot = new Discord.Client({disableEveryone: true});
-bot.commands = new Discord.Collection();
+if(cmd === `${prefix}report`){
 
-fs.readdir("./commands/", (err, files) => {
+  module.exports.run = async (bot, message, args) => {
+      let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+      if(!rUser) return message.channel.send("Couldn't find user.");
+      let rreason = args.join(" ").slice(22);
 
-  if(err) console.log(err);
+      let reportEmbed = new Discord.RichEmbed()
+      .setDescription("Reports")
+      .setColor("#15f153")
+      .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
+      .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
+      .addField("Channel", message.channel)
+      .addField("Time", message.createdAt)
+      .addField("Reason", rreason);
 
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("Couldn't find commands.");
-    return;
-  }
+      let reportschannel = message.guild.channels.find(`name`, "reports");
+      if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
 
-  jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
-    console.log(`${f} loaded!`);
-    bot.commands.set(props.help.name, props);
-  });
 
-});
+      message.delete().catch(O_o=>{});
+      reportschannel.send(reportEmbed);
+
+      return;
+
+    }
 
 var leaveMessages = [
   "didn't really like it here :(",
