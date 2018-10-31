@@ -66,6 +66,14 @@ client.on("message", (message) => {
 
 });
 
+client.on("message", (message) => {
+
+  if(message.author.bot) return;
+  if(!message.content.startsWith(prefix)) return;
+
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
 if(command === "pickle") {
   var size = [
   "1 inch",
@@ -91,7 +99,6 @@ if(command === "pickle") {
 message.channel.send({embed});
 
 }
-
 });
 
 client.on("guildMemberAdd", member => {
