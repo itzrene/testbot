@@ -74,31 +74,32 @@ client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-if(command === "pickle") {
-  var size = [
-  "1 inch",
-  "2 inch",
-  "3 inch",
-  "4 inch",
-  "5 inch",
-  "6 inch",
-  "7 inch",
-  "8 inch",
-  "9 inch",
-  "10 inch",
-  "11 inch",
-  "You don't have a pickle :("
-  ];
+  if(command === "8ball") {
+    var size = [
+    "1 inch",
+    "2 inch",
+    "3 inch",
+    "4 inch",
+    "5 inch",
+    "6 inch",
+    "7 inch",
+    "8 inch",
+    "9 inch",
+    "10 inch",
+    "11 inch",
+    "You don't have a pickle :("
+    ];
 
-  var sizeresult = Math.floor((Math.random() * size.length) + 0);
+    var result = Math.floor((Math.random() * size.length) + 0);
 
-  const embed = new Discord.RichEmbed()
-.setColor(0xb798f2)
-.setTitle("Results:")
-.addField("Your pickle size is ", size[sizeresult]);
-message.channel.send({embed});
+    const embed = new Discord.RichEmbed()
+  .setColor(0xb798f2)
+  .setTitle("Results:")
+  .addField("Your pickle size is: ", size[result]);
+  message.channel.send({embed});
 
-}
+  }
+
 });
 
 client.on("guildMemberAdd", member => {
