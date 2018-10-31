@@ -27,8 +27,6 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
   bot.user.setActivity("tutorials on TSC", {type: "WATCHING"});
-
-  //bot.user.setGame("on SourceCade!");
 });
 
 bot.on("message", async message => {
@@ -43,6 +41,6 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
 
-  });
+});
 
   client.login(process.env.BOT_TOKEN);
