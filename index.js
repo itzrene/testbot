@@ -69,7 +69,7 @@ bot.on("message", async message => {
 });
 
 // 8ball
-client.on("message", (message) => {
+bot.on("message", (message) => {
 
   if(message.author.bot) return;
   if(!message.content.startsWith(prefix)) return;
