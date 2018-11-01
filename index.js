@@ -5,6 +5,7 @@ const botconfig = require("./botconfig.json");
 bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;
+const prefix = "!";
 
 var leaveMessages = [
   "didn't really like it here :(",
