@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
-const prefix = "!"
+const bot = new Discord.Client();
+const fs = require("fs");
+const botconfig = require("./botconfig.json");
 
 var leaveMessages = [
   "didn't really like it here :(",
@@ -10,25 +11,41 @@ var leaveMessages = [
   "has left, maybe they will come back.."
 ];
 
-client.on("message", function(message) {
+fs.readdir("./commands/", (err, files) => {
+
+  if(err) console.log(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js");
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    bot.commands.set(props.help.name, props);
+  });
+});
+
+bot.on("message", function(message) {
   if (message.content === "hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
-client.on("message", function(message) {
+bot.on("message", function(message) {
   if (message.content === "hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
-client.on("message", function(message) {
+bot.on("message", function(message) {
   if (message.content === "test") {
-    message.channel.send("ok " + message.author.toString());
+    message.channel.send("oki " + message.author.toString());
   }
 });
 
-client.on("message", (message) => {
+bot.on("message", (message) => {
 
   if(message.author.bot) return;
   if(!message.content.startsWith(prefix)) return;
@@ -66,7 +83,7 @@ client.on("message", (message) => {
 
 });
 
-client.on("message", (message) => {
+bot.on("message", (message) => {
 
   if(message.author.bot) return;
   if(!message.content.startsWith(prefix)) return;
@@ -102,15 +119,15 @@ client.on("message", (message) => {
 
 });
 
-client.on("guildMemberAdd", member => {
+bot.on("guildMemberAdd", member => {
   member.guild.channels.get("506563742352277507").send(member.user.toString() + " welcome to **ᴄ ʜ ɪ ʟ ʟ    ᴄ ᴏ ᴜ ɴ ᴛ ʏ**! Make sure to check out #welcome for any information, or ask a staff member! 💓 Enjoy your stay!");
 });
 
-client.on("guildMemberRemove", member => {
+bot.on("guildMemberRemove", member => {
   member.guild.channels.get("506551891841253406").send("**" + member.user.username + "** " + leaveMessages[Math.floor(Math.random() * leaveMessages.length)]);
 });
 
-client.on("ready", () => {
+bot.on("ready", () => {
 
   client.user.setGame("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸")
 
