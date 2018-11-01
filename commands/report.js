@@ -1,36 +1,21 @@
 const Discord = require("discord.js");
-const botconfig = require("../botconfig.json");
-const red = botconfig.red;
-const green = botconfig.green;
-const orange = botconfig.orange;
 const errors = require("../utils/errors.js");
 
 module.exports.run = async (bot, message, args) => {
-    message.delete();
-    if(args[0] == "help"){
-      message.reply("Usage: !report (user) (reason)");
-      return;
-    }
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return errors.cantfindUser(message.channel);
-    let rreason = args.join(" ").slice(22);
-    if(!rreason) return errors.noReason(message.channel);
 
-    let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Report")
+  if(!message.member.hasPermission("ADMINISTRATOR")) return errors.noPerms(message, "ADMINISTRATOR");
+  if(!args[0]) return message.channel.send("Oh, hi!");
+  message.channel.bulkDelete(args[0]).then(() => {
+
+    let embed = new Discord.RichEmbed()
     .setColor("#598267")
-    .addField("Reported user:", `${rUser}`)
-    .addField("Reported by:", `${message.author}`)
-    .addField("Channel:", message.channel)
-    .addField("When:", message.createdAt)
-    .addField("Reason:", rreason);
+    .addField(`Cleared ${args[0]} messages`, "Yikes!");
 
-    let reportschannel = message.guild.channels.find(`name`, "reports");
-    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
-    reportschannel.send(reportEmbed);
+  message.channel.send(embed).then(msg => {msg.delete(5000)});
 
+  });
 }
 
 module.exports.help = {
-  name: "report"
+  name: "prune"
 }
