@@ -130,12 +130,6 @@ bot.on("guildMemberRemove", member => {
   member.guild.channels.get("506551891841253406").send("**" + member.user.username + "** " + leaveMessages[Math.floor(Math.random() * leaveMessages.length)]);
 });
 
-bot.on("ready", () => {
-
-  client.user.setGame("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸")
-
-});
-
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
