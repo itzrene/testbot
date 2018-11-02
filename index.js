@@ -47,6 +47,12 @@ bot.on("message", function(message) {
   }
 });
 
+bot.on("message", function(message) {
+  if (message.content === "no u") {
+    message.channel.send(":notlikemiya:" + message.author.toString());
+  }
+});
+
 bot.on("message", (message) => {
 
   if(message.author.bot) return;
