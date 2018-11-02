@@ -51,7 +51,7 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content === "no u") {
-    message.channel.send(":notlikemiya:" + message.author.toString());
+    message.channel.send("<:notlikemiya:507566109528948744>");
   }
 });
 
