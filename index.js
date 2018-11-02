@@ -57,44 +57,6 @@ bot.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if(command === "8ball") {
-    var fortunes = [
-    "Yes",
-    "No",
-    "Maybe",
-    "Definitely!",
-    "Ask me later..",
-    "Fuck u",
-    "I'm not sure",
-    "Probably",
-    "I doubt..",
-    "Who? Me?",
-    "Sorry, I'm too lazy to answer",
-    "I thought you know the answer"
-    ];
-
-    var result = Math.floor((Math.random() * fortunes.length) + 0);
-
-    const embed = new Discord.RichEmbed()
-  .setColor(0xb798f2)
-  .setThumbnail("http://iconbug.com/data/95/256/8696325e0e7407823058632e68fb5970.png")
-  .setTitle("Results:")
-  .addField("Q:", args)
-  .addField("A:", fortunes[result]);
-  message.channel.send({embed});
-
-  }
-
-});
-
-bot.on("message", (message) => {
-
-  if(message.author.bot) return;
-  if(!message.content.startsWith(prefix)) return;
-
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
   if(command === "pickle") {
     var size = [
     "1 inch",
