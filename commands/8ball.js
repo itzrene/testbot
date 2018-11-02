@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-  if(!args[2]) return message.reply("Ask me a question.");
+  if(!args[2]) return message.reply("ask me a question.");
   let fortunes = [
   "Yes",
   "No",
