@@ -85,18 +85,14 @@ bot.on("message", function(message) {
   }
 });
 
-bot.on("message", async => {
- var first_message_var = await bot.send_message(channel, "This is the first message.")
-  if (message.content === "ice") {
-
-
-      message.channel.send(first_message_var)
-
-    }if (message.content === "yes") {
-
-await bot.edit_message(first_message_var, "This is the edit to replace the first message.")
-
-}
+bot.on("message", function(message) {
+  if (message.content === "oh") {
+message.channel.send('ho')
+  .then((msg) => {
+    setTimeout(function() {
+    msg.edit('oh');
+  }, 5000)}); 
+  }
 });
 
 bot.on("message", (message) => {
