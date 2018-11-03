@@ -39,7 +39,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", function(message) {
   if (message.content === "hello") {
-    message.channel.send(Math.floor((Math.random() * options.length) + 0) + message.author.toString());
+    message.channel.send(Math.floor((Math.random() * leaveMessages.length) + 0) + message.author.toString());
   }
 });
 
