@@ -32,13 +32,13 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes === "hello") {
+  if (message.content.includes("hello")) {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes === "hi") {
+  if (message.content.includes("hi")) {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
@@ -56,32 +56,38 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes === "Hi") {
+  if (message.content.includes("Hi")) {
     message.channel.send("Hello! 💓 ");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes === "Hello") {
+  if (message.content.includes("Hello")) {
     message.channel.send("Hello! 💓 ");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes === "Hello") {
+  if (message.content.includes("Hello")) {
     message.channel.send("Hello! 💓 ");
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "uh") {
-    message.channel.send("<:UhSmile:506232978146590720>");
+    message.channel.send(":UhSmile:506232978146590720");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes === "includes") {
+  if (message.content.includes("includes")) {
     message.channel.send("Hello! 💓 ");
+  }
+});
+
+bot.on("message", function(message) {
+  if (message.content === "includes") {
+    message.author.send("Hello! 💓 ");
   }
 });
 
