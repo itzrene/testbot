@@ -86,18 +86,12 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content === "oh") {
-message.channel.send('ho')
+  if (command === "ping") {
+message.channel.send("Pong! ```Calculating your ping...```")
   .then((msg) => {
     setTimeout(function() {
-    msg.edit('oh');
-  }, 500)});
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content === "ping") {
-    message.author.send(new Date().getTime() - message.createdTimestamp + " ms");
+    msg.edit("Your ping is: ```"new Date().getTime() - message.createdTimestamp + "```" + " ms");
+  }, 1000)});
   }
 });
 
