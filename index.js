@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const fs = require("fs");
-const botconfig = require("./botconfig.json")
+const botconfig = require("./botconfig.json");
 bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;
@@ -32,13 +32,13 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes("hello")) {
+  if (message.content === "hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes("hi")) {
+  if (message.content === "hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
@@ -56,20 +56,20 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes("Hi")) {
-    message.channel.send("Hello! 💓 ");
+  if (message.content === "Hi") {
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes("Hello")) {
-    message.channel.send("Hello! 💓 ");
+  if (message.content === "Hello") {
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes("Hello")) {
-    message.channel.send("Hello! 💓 ");
+  if (message.content === "Hello") {
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
@@ -80,14 +80,8 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content.includes("includes")) {
-    message.channel.send("Hello! 💓 ");
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content === "includes") {
-    message.author.send("Hello! 💓 ");
+  if (message.content === "pm") {
+    message.author.send("Hello! 💓");
   }
 });
 
