@@ -13,8 +13,6 @@ var options = [
   "Hi! 💓 "
 ];
 
-var response = Math.floor((Math.random() * options.length) + 0);
-
 var leaveMessages = [
   "didn't really like it here :(",
   "has left, bye",
@@ -41,12 +39,14 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", function(message) {
   if (message.content === "hello") {
+    var response = Math.floor((Math.random() * options.length) + 0);
     message.channel.send(response + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "hi") {
+    var response = Math.floor((Math.random() * options.length) + 0);
     message.channel.send(response + message.author.toString());
   }
 });
@@ -65,18 +65,14 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content === "Hi") {
+    var response = Math.floor((Math.random() * options.length) + 0);
     message.channel.send(response + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "Hello") {
-    message.channel.send(response + message.author.toString());
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content === "Hello") {
+    var response = Math.floor((Math.random() * options.length) + 0);
     message.channel.send(response + message.author.toString());
   }
 });
