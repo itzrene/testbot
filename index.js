@@ -7,12 +7,6 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
-var options = [
-  "Hello! 💓 ",
-  "Hey there! 💓 ",
-  "Hi! 💓 "
-];
-
 var leaveMessages = [
   "didn't really like it here :(",
   "has left, bye",
@@ -39,13 +33,13 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", function(message) {
   if (message.content === "hello") {
-    message.channel.send(Math.floor((Math.random() * leaveMessages.length) + 0) + message.author.toString());
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "hi") {
-    message.channel.send(Math.floor((Math.random() * options.length) + 0) + message.author.toString());
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
@@ -63,13 +57,13 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content === "Hi") {
-    message.channel.send(Math.floor((Math.random() * options.length) + 0) + message.author.toString());
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "Hello") {
-    message.channel.send(Math.floor((Math.random() * options.length) + 0) + message.author.toString());
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
@@ -86,8 +80,6 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
   if (command === "ping") {
 message.channel.send("Pong! ```Calculating your ping...```")
   .then((msg) => {
