@@ -74,15 +74,28 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content === "uh") {
-    message.channel.send(":UhSmile:506232978146590720");
+  if (message.content === "mc dm me") {
+    message.author.send("Do you need something?");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "pm") {
-    message.author.send("Hello! 💓");
+  if (message.content === "mc pm me") {
+    message.author.send("Do you need something?");
   }
+});
+
+bot.on("message", function(message) {
+
+  if (message.content === "ice") {
+
+      first_message_var = await bot.send_message(channel, "This is the first message.")
+
+    }if (message.content === "yes") {
+
+await bot.edit_message(first_message_var, "This is the edit to replace the first message.")
+
+}
 });
 
 bot.on("message", (message) => {
