@@ -86,7 +86,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-first_message_var = await bot.send_message(channel, "This is the first message.")
+ var first_message_var = await bot.send_message(channel, "This is the first message.")
   if (message.content === "ice") {
 
 
