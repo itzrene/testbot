@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const fs = require("fs");
-const botconfig = require("./botconfig.json");
+const botconfig = require("./botconfig.json")
 bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;
