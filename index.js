@@ -7,6 +7,14 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
+var options = [
+  "Hello! 💓 ",
+  "Hey there! 💓 ",
+  "Hi! 💓 "
+];
+
+var response = options[Math.floor(Math.random()*options.length)];
+
 var leaveMessages = [
   "didn't really like it here :(",
   "has left, bye",
@@ -33,13 +41,13 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", function(message) {
   if (message.content === "hello") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
+    message.channel.send(respond + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "hi") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
+    message.channel.send(respond + message.author.toString());
   }
 });
 
@@ -57,19 +65,19 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content === "Hi") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
+    message.channel.send(respond" + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "Hello") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
+    message.channel.send(respond + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "Hello") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
+    message.channel.send(respond + message.author.toString());
   }
 });
 
