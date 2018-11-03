@@ -94,6 +94,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if (command === "ping") {
 message.channel.send("Pong! ```Calculating your ping...```")
