@@ -41,13 +41,13 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", function(message) {
   if (message.content === "hello") {
-    message.channel.send(respond + message.author.toString());
+    message.channel.send(response + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "hi") {
-    message.channel.send(respond + message.author.toString());
+    message.channel.send(response + message.author.toString());
   }
 });
 
@@ -65,19 +65,19 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content === "Hi") {
-    message.channel.send(respond + message.author.toString());
+    message.channel.send(response + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "Hello") {
-    message.channel.send(respond + message.author.toString());
+    message.channel.send(response + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
   if (message.content === "Hello") {
-    message.channel.send(respond + message.author.toString());
+    message.channel.send(response + message.author.toString());
   }
 });
 
