@@ -90,7 +90,7 @@ bot.on("message", function(message) {
 message.channel.send("Pong! ```Calculating your ping...```")
   .then((msg) => {
     setTimeout(function() {
-    msg.edit("Your ping is: ```"new Date().getTime() - message.createdTimestamp + "```" + " ms");
+    msg.edit("Your ping is: ```" + new Date().getTime() - message.createdTimestamp + "```" + " ms");
   }, 1000)});
   }
 });
