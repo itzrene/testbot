@@ -85,8 +85,6 @@ bot.on("message", function(message) {
   }
 });
 
-<:UhSmile:506232978146590720>
-
 bot.on("message", (message) => {
 
   if(message.author.bot) return;
