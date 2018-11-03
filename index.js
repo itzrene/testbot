@@ -91,7 +91,13 @@ message.channel.send('ho')
   .then((msg) => {
     setTimeout(function() {
     msg.edit('oh');
-  }, 5000)}); 
+  }, 500)});
+  }
+});
+
+bot.on("message", function(message) {
+  if (message.content === "ping") {
+    message.author.send(new Date().getTime() - message.createdTimestamp + " ms");
   }
 });
 
