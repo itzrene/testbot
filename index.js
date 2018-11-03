@@ -13,7 +13,7 @@ var options = [
   "Hi! 💓 "
 ];
 
-var response = options[Math.floor(Math.random()*options.length)];
+var response = Math.floor((Math.random() * options.length) + 0);
 
 var leaveMessages = [
   "didn't really like it here :(",
