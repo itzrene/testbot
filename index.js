@@ -65,7 +65,7 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content === "Hi") {
-    message.channel.send(respond" + message.author.toString());
+    message.channel.send(respond + message.author.toString());
   }
 });
 
