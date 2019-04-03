@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
   ];
 
   let result = Math.floor((Math.random() * fortunes.length));
-  let question = args.slice(1).join(" ");
+  let question = args.slice(2).join(" ");
 
   let embed = new Discord.RichEmbed()
   .setColor("0xb798f2")
