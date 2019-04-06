@@ -99,7 +99,7 @@ const responseObject = {
 };
 
 bot.on("message", (message) => {
-  if(responseObject[message.ignoreCase]) {
+  if(responseObject[message.match]) {
     message.author.send(responseObject[message.content]);
   }
 });
