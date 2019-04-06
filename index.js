@@ -78,7 +78,7 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "mc pm me") {
-    message.author.send("Do you need something?");
+    message.author.send("Do you need anything?");
   }
 });
 
@@ -86,7 +86,7 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content === "rene") {
-    message.author.send("Do you need something?");
+    message.author.send("Do you need anything?");
   }
 });
 
