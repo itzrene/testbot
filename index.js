@@ -30,6 +30,7 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
+    bot.channels.get("id", "508762004505362471").send(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
 });
@@ -89,6 +90,7 @@ bot.on("message", function(message) {
     message.author.send("Do you need something?");
   }
 });
+
 
 
 bot.on("message", function(message) {
