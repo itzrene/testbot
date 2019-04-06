@@ -85,7 +85,7 @@ bot.on("message", function(message) {
 
 
 bot.on("message", function(message) {
-  if (message.ignoreCase("rene")) {
+  if (message.content === "rene") {
     message.author.send("Do you need something?");
   }
 });
