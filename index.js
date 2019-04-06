@@ -35,49 +35,49 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase("hello"))) {
+  if (message.content === "hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "hi") {
+  if (message.content === "hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "test") {
+  if (message.content === "test") {
     message.channel.send("oki " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "no u") {
+  if (message.content === "no u") {
     message.channel.send("<:notlikemiya:507566109528948744>");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "Hi") {
+  if (message.content === "Hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "Hello") {
+  if (message.content === "Hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "mc dm me") {
+  if (message.content === "mc dm me") {
     message.author.send("Do you need something?");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "mc pm me") {
+  if (message.content === "mc pm me") {
     message.author.send("Do you need something?");
   }
 });
@@ -85,7 +85,7 @@ bot.on("message", function(message) {
 
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "rene") {
+  if (message.ignoreCase("rene")) {
     message.author.send("Do you need something?");
   }
 });
