@@ -10,7 +10,7 @@ const prefix = "!";
 // don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
 // or something
 
-var leaveMessages = 
+var leaveMessages = [
   "didn't really like it here :(",
   "has left, bye",
   "what a.. nevermind!",
@@ -47,7 +47,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content === "test") {
+  if (message.content.toLowerCase("test")) {
     message.channel.send("oki " + message.author.toString());
   }
 });
@@ -59,7 +59,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content.toLowerCase("Hi")) {
+  if (message.content === "Hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
