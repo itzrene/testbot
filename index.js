@@ -18,6 +18,18 @@ var leaveMessages = [
   "has left, maybe they will come back.."
 ];
 
+const responseObject = {
+  "ayy": "Ayy, lmao!",
+  "wat": "Say what?",
+  "lol": "roflmaotntpmp"
+};
+
+bot.on("message", (message) => {
+  if(responseObject[message.content.toLowerCase()]) {
+    message.channel.send(responseObject[message.content.toLowerCase()]);
+  }
+});
+
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
