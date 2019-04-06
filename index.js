@@ -21,6 +21,8 @@ var leaveMessages = [
 const responseObject = {
   "hit or miss": "**I GuESs ThEY nEVeR MIsS HUH?!**",
   "rene": "Who?",
+  "shen": "wha- cucumbers?",
+  "shenny": "wha- cucumbers?",
   "lol": "roflmaotntpmp"
 };
 
@@ -29,19 +31,6 @@ bot.on("message", (message) => {
     message.channel.send(responseObject[message.content.toLowerCase()]);
   }
 });
-
-
-
-
-bot.on("message", (message) => {
-  if(message.startsWith("mc")){
-    if(message.contains(message.toLowerCase() == "hey")){
-      message.channel.send("hey");
-    }
-  }
-});
-
-
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -72,7 +61,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content === "test") {
+  if (message.content.toLowerCase() == "test") {
     message.channel.send("oki " + message.author.toString());
   }
 });
