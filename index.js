@@ -38,7 +38,7 @@ fs.readdir("./commands/", (err, files) => {
 
 
 bot.on("message", function(message) {
-  if (message.content.equalsIgnoreCase("ok")) {
+  if (message.content == "ok") {
     message.channel.send("oki");
   }
 });
