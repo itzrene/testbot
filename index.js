@@ -35,7 +35,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("message", function(message) {
-  if (message.ignoreCase === "hello") {
+  if (message.ignoreCase("hello"))) {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
