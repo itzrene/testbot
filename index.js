@@ -85,8 +85,22 @@ bot.on("message", function(message) {
 
 
 bot.on("message", function(message) {
-  if (message.content === "rene") {
+  if (message.ignoreCase("rene")) {
     message.author.send("Do you need something?");
+  }
+});
+
+
+
+const responseObject = {
+  "ayy": "Ayy, lmao!",
+  "wat": "Say what?",
+  "lol": "roflmaotntpmp"
+};
+
+client.on("message", (message) => {
+  if(responseObject[message.content]) {
+    message.channel.send(responseObject[message.content]);
   }
 });
 
