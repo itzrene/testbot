@@ -7,6 +7,9 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
+// don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
+// or something
+
 var leaveMessages = [
   "didn't really like it here :(",
   "has left, bye",
@@ -32,52 +35,62 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("message", function(message) {
-  if (message.content === "hello") {
+  if (message.ignoreCase === "hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "hi") {
+  if (message.ignoreCase === "hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "test") {
+  if (message.ignoreCase === "test") {
     message.channel.send("oki " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "no u") {
+  if (message.ignoreCase === "no u") {
     message.channel.send("<:notlikemiya:507566109528948744>");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "Hi") {
+  if (message.ignoreCase === "Hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "Hello") {
+  if (message.ignoreCase === "Hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "mc dm me") {
+  if (message.ignoreCase === "mc dm me") {
     message.author.send("Do you need something?");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "mc pm me") {
+  if (message.ignoreCase === "mc pm me") {
     message.author.send("Do you need something?");
   }
 });
+
+
+
+bot.on("message", function(message) {
+  if (message.ignoreCase === "rene") {
+    message.author.send("Do you need something?");
+  }
+});
+
+
 
 bot.on("message", function(message) {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
