@@ -10,7 +10,7 @@ const prefix = "!";
 // don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
 // or something
 
-var leaveMessages = [
+var leaveMessages = 
   "didn't really like it here :(",
   "has left, bye",
   "what a.. nevermind!",
