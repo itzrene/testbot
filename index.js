@@ -19,8 +19,8 @@ var leaveMessages = [
 ];
 
 const responseObject = {
-  "ayy": "Ayy, lmao!",
-  "wat": "Say what?",
+  "hi": "Hello! 💓 " + message.author.toString(),
+  "hello": "Hello! 💓 " + message.author.toString(),
   "lol": "roflmaotntpmp"
 };
 
@@ -59,18 +59,6 @@ bot.on("message", function(message) {
 
 
 bot.on("message", function(message) {
-  if (message.content === "hello") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content === "hi") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
-  }
-});
-
-bot.on("message", function(message) {
   if (message.content === "test") {
     message.channel.send("oki " + message.author.toString());
   }
@@ -82,17 +70,6 @@ bot.on("message", function(message) {
   }
 });
 
-bot.on("message", function(message) {
-  if (message.content === "Hi") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content === "Hello") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
-  }
-});
 
 bot.on("message", function(message) {
   if (message.content === "mc dm me") {
