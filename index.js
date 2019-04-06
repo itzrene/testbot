@@ -34,6 +34,18 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+
+
+
+bot.on("message", function(message) {
+  if (message.content === "ok") {
+    message.channel.send("oki");
+  }
+});
+
+
+
+
 bot.on("message", function(message) {
   if (message.content === "hello") {
     message.channel.send("Hello! 💓 " + message.author.toString());
