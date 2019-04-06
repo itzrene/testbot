@@ -19,8 +19,8 @@ var leaveMessages = [
 ];
 
 const responseObject = {
-  "hi": "Hello! 💓 " + message.author.toString(),
-  "hello": "Hello! 💓 " + message.author.toString(),
+  "hit or miss": "**I GuESs ThEY nEVeR MIsS HUH?!**",
+  "rene": "Who?",
   "lol": "roflmaotntpmp"
 };
 
@@ -46,17 +46,17 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-
-
-
 bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "ok") {
-    message.channel.send("oki");
+  if (message.content.toLowerCase() == "hello") {
+    message.channel.send("Hello! 💓 " + message.author.toString());
   }
 });
 
-
-
+bot.on("message", function(message) {
+  if (message.content.toLowerCase() == "hi") {
+    message.channel.send("Hello! 💓 " + message.author.toString());
+  }
+});
 
 bot.on("message", function(message) {
   if (message.content === "test") {
@@ -65,20 +65,19 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-  if (message.content === "no u") {
+  if (message.content.toLowerCase() == "no u") {
     message.channel.send("<:notlikemiya:507566109528948744>");
   }
 });
 
-
 bot.on("message", function(message) {
-  if (message.content === "mc dm me") {
+  if (message.content.toLowerCase() == "mc dm me") {
     message.author.send("Do you need something?");
   }
 });
 
 bot.on("message", function(message) {
-  if (message.content === "mc pm me") {
+  if (message.content.toLowerCase() == "mc pm me") {
     message.author.send("Do you need something?");
   }
 });
