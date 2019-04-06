@@ -98,7 +98,7 @@ const responseObject = {
   "lol": "roflmaotntpmp"
 };
 
-bot.on("message", function(message) => {
+bot.on("message", (message) => {
   if(responseObject[message.content]) {
     message.author.send(responseObject[message.content]);
   }
