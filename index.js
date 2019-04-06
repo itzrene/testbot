@@ -30,6 +30,19 @@ bot.on("message", (message) => {
   }
 });
 
+
+
+
+bot.on("message", (message) => {
+  if(message.startsWith("mc")){
+    if(message.contains(message.toLowerCase() == "hey")){
+      message.channel.send("hey");
+    }
+  }
+});
+
+
+
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
@@ -72,20 +85,12 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "mc dm me") {
-    message.author.send("Do you need something?");
+    message.author.send("Do you need anything?");
   }
 });
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "mc pm me") {
-    message.author.send("Do you need anything?");
-  }
-});
-
-
-
-bot.on("message", function(message) {
-  if (message.content === "rene") {
     message.author.send("Do you need anything?");
   }
 });
