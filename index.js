@@ -151,7 +151,7 @@ bot.on("guildMemberRemove", member => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.guild.channels.get("508762004505362471").send(`${bot.user.username} is online on ${bot.guilds.size} servers!`));
+  bot.guild.channels.get("508762004505362471").send(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.guild.channels.get("508762004505362471").send(`${f} loaded!`);
   bot.user.setActivity("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸", {type: "WATCHING"});
 
