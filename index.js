@@ -8,15 +8,9 @@ let cdseconds = 5;
 const prefix = "!";
 
 
-var Jimp = require('jimp');
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "img") {
-
-    Jimp.read("images/wallpaper.jpg").then(function(image) {
-      image.resize(100, 100);
-      image.write('wallpaper.jpg');
-    });
 
     message.channel.send("Img sent!", {file: "images/wallpaper.jpg"});
   }
