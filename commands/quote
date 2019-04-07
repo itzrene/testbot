@@ -3,17 +3,14 @@ const quotes = require("./quotes.json");
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
+    
+        var quotes = config.quotes;
 
-        if (message.content.toLowerCase() == "quote") {
-            var quotes = config.quotes;
-
-            function randomQuote() {
-                return quotes[Math.floor(Math.random() * quotes.length)];
-            };
-
-            message.channel.send(randomQuote());
-
+        function randomQuote() {
+            return quotes[Math.floor(Math.random() * quotes.length)];
         };
+
+        message.channel.send(randomQuote());
 
 }
 
