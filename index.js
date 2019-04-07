@@ -7,8 +7,6 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
-const Canvas = require('canvas');
-
 // don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
 // or something
 
