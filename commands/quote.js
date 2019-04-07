@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args, member) => {
         return quotes[Math.floor(Math.random() * quotes.length)];
     };
 
-    message.channel.send("*" + randomQuote() + "*");
+    message.channel.send("*" + quotes + "*");
 
 }
 
