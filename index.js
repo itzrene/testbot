@@ -7,10 +7,14 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
-
+var Jimp = require('jimp');
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "img") {
+
+    let image = Jimp.read("images/wallpaper.jpg")
+    image.resize(100,100)
+    image.write("wallpaper.jpg")
 
     message.channel.send("Img sent!", {file: "images/wallpaper.jpg"});
   }
