@@ -7,6 +7,14 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
+
+
+bot.on("message", function(message) {
+  if (message.content.toLowerCase() == "img") {
+    message.channel.send("Img sent!", {file: "images/wallpaper.jpg"});
+  }
+});
+
 // don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
 // or something
 
