@@ -14,15 +14,14 @@ bot.on("message", function(message) {
   if (message.content.toLowerCase() == "img") {
 
     Jimp.read("images/wallpaper.jpg").then(function(image) {
-      Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function(font) {
-        image.resize(100, 100);
-        image.write('wallpaper.jpg');
-      });
+      image.resize(100, 100);
+      image.write('wallpaper.jpg');
     });
 
     message.channel.send("Img sent!", {file: "images/wallpaper.jpg"});
   }
 });
+
 
 // don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
 // or something
