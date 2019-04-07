@@ -3,7 +3,7 @@ const quotes = require("./quotes.js");
 
 module.exports.run = async (bot, message, args, member) => {
 
-    message.channel.send(quotes.quotes);
+    message.channel.send("ok");
 
 }
 
