@@ -18,19 +18,6 @@ var leaveMessages = [
   "has left, maybe they will come back.."
 ];
 
-var config = require("./quotes.json");
-var quotes = config.quotes;
-
-function randomQuote() {
-   return quotes[Math.floor(Math.random() * quotes.length)];
-};
-
-bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "quote") {
-    message.channel.send(randomQuote());
-  }
-});
-
 const responseObject = {
   "hit or miss": "**I GuESs ThEY nEVeR MIsS HUH?!**",
   "rene": "Who?",
