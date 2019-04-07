@@ -21,8 +21,11 @@ var leaveMessages = [
 const responseObject = {
   "hit or miss": "**I GuESs ThEY nEVeR MIsS HUH?!**",
   "rene": "Who?",
+  "rene?": "Who?",
   "shen": "wha- cucumbers?",
   "shenny": "wha- cucumbers?",
+  "shen?": "wha- cucumbers?",
+  "shenny?": "wha- cucumbers?",
   "lol": "roflmaotntpmp",
   "do it": "**JUST DO IT!**"
 };
