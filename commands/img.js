@@ -20,7 +20,6 @@ module.exports.run = async (bot, message, args, member) => {
         }
     });
 
-    message.channel.send("", {file: "images/lenna-circle.png"});
 }
 
 module.exports.help = {
