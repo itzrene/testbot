@@ -16,11 +16,7 @@ module.exports.run = async (bot, message, args) => {
 
     let data = JSON.stringify(student);
     fs.writeFileSync('student-2.json', data);
-    if(!fs.exists("student-2.json")){
-        message.channel.send("created");
-    } else {
-        message.channel.send("written");
-    }
+    message.channel.send("created");
 
 }
 
