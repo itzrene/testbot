@@ -27,8 +27,7 @@ const responseObject = {
   "shen?": "wha- cucumbers?",
   "shenny?": "wha- cucumbers?",
   "lol": "roflmaotntpmp",
-  "do it": "**JUST DO IT!**",
-  "jacob": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiNhtiA673hAhUIPVAKHTxsAygQjRx6BAgBEAU&url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fspongebob-l0MYAs5E2oIDCq9So&psig=AOvVaw1niqMFrFZfLWlFBG0JO625&ust=1554721484739450"
+  "do it": "**JUST DO IT!**"
 };
 
 bot.on("message", (message) => {
@@ -86,6 +85,16 @@ bot.on("message", function(message) {
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "mc pm me") {
     message.author.send("Do you need anything?");
+  }
+});
+
+bot.on("message", function(message) {
+  if (message.content.toLowerCase() == "jacob") {
+    let embed = new Discord.RichEmbed()
+        .setColor("0xb798f2")
+        .setImage("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwicv8bs673hAhUDEVAKHabRAdYQjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dimages%26cd%3D%26ved%3D%26url%3D%252Furl%253Fsa%253Di%2526rct%253Dj%2526q%253D%2526esrc%253Ds%2526source%253Dimages%2526cd%253D%2526cad%253Drja%2526uact%253D8%2526ved%253D2ahUKEwiNhtiA673hAhUIPVAKHTxsAygQjRx6BAgBEAU%2526url%253Dhttps%25253A%25252F%25252Fgiphy.com%25252Fgifs%25252Fspongebob-l0MYAs5E2oIDCq9So%2526psig%253DAOvVaw1niqMFrFZfLWlFBG0JO625%2526ust%253D1554721484739450%26psig%3DAOvVaw1niqMFrFZfLWlFBG0JO625%26ust%3D1554721484739450&psig=AOvVaw1niqMFrFZfLWlFBG0JO625&ust=1554721484739450");
+
+    message.channel.send(embed);
   }
 });
 
