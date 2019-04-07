@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-var config = require("/quotes.json");
+var config = require("./quotes.json");
 var quotes = config.quotes;
 
 
