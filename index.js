@@ -23,7 +23,7 @@ var quotes = config.quotes;
 
 function randomQuote() {
    return quotes[Math.floor(Math.random() * quotes.length)];
-};'
+};
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "quote") {
