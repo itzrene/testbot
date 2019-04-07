@@ -7,6 +7,8 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
+const Canvas = require('canvas');
+
 // don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
 // or something
 
@@ -95,7 +97,22 @@ bot.on("message", function(message) {
 
 
 
+bot.on("message", function(message) {
+  if (message.content.toLowerCase() == "banner") {
 
+    const canvas = Canvas.createCanvas(700, 250);
+    const ctx = canvas.getContext('2d');
+
+    // Since the image takes time to load, you should await it
+    const background = Canvas.loadImage('./wallpaper.jpg');
+    // This uses the canvas dimensions to stretch the image onto the entire canvas
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    // Use helpful Attachment class structure to process the file for you
+    const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
+
+    message.author.send("Banner created!", attachment);
+  }
+});
 
 
 
