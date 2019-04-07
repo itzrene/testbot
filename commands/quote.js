@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args, member) => {
     var quotes = config.quotes;
 
     function randomQuote() {
-        return quotes[Math.floor(Math.random() * quotes.length + 1)];
+        return quotes[Math.floor(Math.random() * quotes.length)];
     };
 
     message.channel.send("*" + randomQuote() + "*");
