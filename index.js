@@ -90,6 +90,20 @@ bot.on("message", function(message) {
 });
 
 
+bot.on("message", function(message) {
+  if (message.content.toLowerCase() == "quote") {
+    var quotes = config.quotes;
+
+    function randomQuote() {
+      return quotes[Math.floor(Math.random() * quotes.length)];
+    };
+    
+    message.channel.send(randomQuote());
+    
+  }
+});
+
+
 
 bot.on("message", function(message) {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
