@@ -23,7 +23,8 @@ const responseObject = {
   "rene": "Who?",
   "shen": "wha- cucumbers?",
   "shenny": "wha- cucumbers?",
-  "lol": "roflmaotntpmp"
+  "lol": "roflmaotntpmp",
+  "do it": "**JUST DO IT!**"
 };
 
 bot.on("message", (message) => {
