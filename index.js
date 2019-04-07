@@ -90,6 +90,17 @@ bot.on("message", function(message) {
 });
 
 
+bot.on("message", function(message) {
+  if (message.content.toLowerCase() == "f") {
+    if(!args[2]) return message.reply("ok");
+
+    let prayer = args.slice(0).join(" ");
+    
+    message.channel.send("ok: " + prayer);
+  }
+});
+
+
 
 bot.on("message", function(message) {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
