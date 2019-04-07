@@ -27,7 +27,8 @@ const responseObject = {
   "shen?": "wha- cucumbers?",
   "shenny?": "wha- cucumbers?",
   "lol": "roflmaotntpmp",
-  "do it": "**JUST DO IT!**"
+  "do it": "**JUST DO IT!**",
+  "jacob": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiNhtiA673hAhUIPVAKHTxsAygQjRx6BAgBEAU&url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fspongebob-l0MYAs5E2oIDCq9So&psig=AOvVaw1niqMFrFZfLWlFBG0JO625&ust=1554721484739450"
 };
 
 bot.on("message", (message) => {
