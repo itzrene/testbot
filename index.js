@@ -90,27 +90,16 @@ bot.on("message", function(message) {
 });
 
 
-bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "f") {
-    if(!args[2]) return message.reply("ok");
-
-    let prayer = args.slice(0).join(" ");
-    
-    message.channel.send("ok: " + prayer);
-  }
-});
-
-
 
 bot.on("message", function(message) {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if (command === "ping") {
-message.channel.send("Pong! ```Calculating your ping...```")
-  .then((msg) => {
-    setTimeout(function() {
-    msg.edit("Your ping is: **" + new Date().getTime() - message.createdTimestamp + "** ms");
-  }, 1000)});
+    message.channel.send("Pong! ```Calculating your ping...```")
+        .then((msg) => {
+          setTimeout(function() {
+            msg.edit("Your ping is: **" + new Date().getTime() - message.createdTimestamp + "** ms");
+          }, 1000)});
   }
 });
 
@@ -124,27 +113,27 @@ bot.on("message", (message) => {
 
   if(command === "pickle") {
     var size = [
-    "1 inch",
-    "2 inch",
-    "3 inch",
-    "4 inch",
-    "5 inch",
-    "6 inch",
-    "7 inch",
-    "8 inch",
-    "9 inch",
-    "10 inch",
-    "11 inch",
-    "You don't have a pickle :("
+      "1 inch",
+      "2 inch",
+      "3 inch",
+      "4 inch",
+      "5 inch",
+      "6 inch",
+      "7 inch",
+      "8 inch",
+      "9 inch",
+      "10 inch",
+      "11 inch",
+      "You don't have a pickle :("
     ];
 
     var result = Math.floor((Math.random() * size.length) + 0);
 
     const embed = new Discord.RichEmbed()
-  .setColor(0xb798f2)
-  .setTitle("Results:")
-  .addField("Your pickle size is: ", size[result]);
-  message.channel.send({embed});
+        .setColor(0xb798f2)
+        .setTitle("Results:")
+        .addField("Your pickle size is: ", size[result]);
+    message.channel.send({embed});
 
   }
 
