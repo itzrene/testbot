@@ -6,7 +6,6 @@ bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
-const config = require("./quotes.json");
 
 // don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
 // or something
@@ -87,20 +86,6 @@ bot.on("message", function(message) {
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "mc pm me") {
     message.author.send("Do you need anything?");
-  }
-});
-
-
-bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "quote") {
-    var quotes = config.quotes;
-
-    function randomQuote() {
-      return quotes[Math.floor(Math.random() * quotes.length)];
-    };
-    
-    message.channel.send(randomQuote());
-    
   }
 });
 
