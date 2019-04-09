@@ -7,9 +7,6 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
-// don't forget to make the thing with discord channel and bot, for example it will send to some channel "the bot is online"
-// or something
-
 var leaveMessages = [
   "didn't really like it here :(",
   "has left, bye",
@@ -28,7 +25,8 @@ const responseObject = {
   "shenny?": "wha- cucumbers?",
   "lol": "roflmaotntpmp",
   "do it": "**JUST DO IT!**",
-  "jacob": "https://media.giphy.com/media/l0MYAs5E2oIDCq9So/giphy.gif"
+  "jacob": "https://media.giphy.com/media/l0MYAs5E2oIDCq9So/giphy.gif",
+  "no u": "<:notlikemiya:507566109528948744>"
 };
 
 bot.on("message", (message) => {
@@ -63,85 +61,6 @@ bot.on("message", function(message) {
   if (message.content.toLowerCase() == "hi") {
     message.channel.send("Hello! 💓 " + message.author.toString());
   }
-});
-
-bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "test") {
-    message.channel.send("oki " + message.author.toString());
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "no u") {
-    message.channel.send("<:notlikemiya:507566109528948744>");
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "mc dm me") {
-    message.author.send("Do you need anything?");
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.content.toLowerCase() == "mc pm me") {
-    message.author.send("Do you need anything?");
-  }
-});
-
-
-
-
-
-
-
-
-bot.on("message", function(message) {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-  if (command === "ping") {
-    message.channel.send("Pong! ```Calculating your ping...```")
-        .then((msg) => {
-          setTimeout(function() {
-            msg.edit("Your ping is: **" + (Date.now() - msg.createdTimestamp) + "** ms");
-          }, 1000)});
-  }
-});
-
-bot.on("message", (message) => {
-
-  if(message.author.bot) return;
-  if(!message.content.startsWith(prefix)) return;
-
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  if(command === "pickle") {
-    var size = [
-      "1 inch",
-      "2 inch",
-      "3 inch",
-      "4 inch",
-      "5 inch",
-      "6 inch",
-      "7 inch",
-      "8 inch",
-      "9 inch",
-      "10 inch",
-      "11 inch",
-      "You don't have a pickle :("
-    ];
-
-    var result = Math.floor((Math.random() * size.length) + 0);
-
-    const embed = new Discord.RichEmbed()
-        .setColor(0xb798f2)
-        .setTitle("Results:")
-        .addField("Your pickle size is: ", size[result]);
-    message.channel.send({embed});
-
-  }
-
 });
 
 bot.on("guildMemberAdd", member => {
