@@ -26,12 +26,10 @@ module.exports.run = async (bot, message, args) => {
                         alignmentY: jimp.VERTICAL_ALIGN_MIDDLE
                     },
                     100,
-                    200,
-                    console.log("Meme: Font printed!")
+                    200
                 );
                 test.write("images/meme/meme_" + message.author.id.toString() + ".png");
-                console.log("Meme: Created!");
-                message.channel.send("Img sent!", {file: "images/meme/meme_" + message.author.id.toString() + ".png"});
+                message.channel.send("", {file: "images/meme/meme_" + message.author.id.toString() + ".png"});
                 setTimeout(function () {
                     try {
                         fs.unlinkSync(path)
@@ -40,7 +38,6 @@ module.exports.run = async (bot, message, args) => {
                     }
                 }, 3000);
             });
-            console.log("Meme: Being created!");
         });
     }
 
