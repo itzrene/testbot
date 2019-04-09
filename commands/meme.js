@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
                     100,
                     200,
                     console.log("Meme: Font printed!")
-                ); // prints 'Hello world!' on an image, middle and center-aligned, when x = 0 and y = 0
+                );
                 test.write("images/meme/meme_" + message.author.id.toString() + ".png");
                 console.log("Meme: Created!");
                 message.channel.send("Img sent!", {file: "images/meme/meme_" + message.author.id.toString() + ".png"});
