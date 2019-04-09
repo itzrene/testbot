@@ -6,11 +6,10 @@ module.exports.run = async (bot, message, args) => {
         .then((msg) => {
             setTimeout(function () {
                 msg.edit("Your ping is: **" + (Date.now() - msg.createdTimestamp) + "** ms");
-            }, 1000)
-        });
+            }, 1000)});
 
 }
 
 module.exports.help = {
-    name: "8ball"
+    name: "ping"
 }
