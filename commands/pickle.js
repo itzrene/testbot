@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Your pickle size is: ", size[result]);
     message.channel.send({embed});
 
-}x
+}
 
 module.exports.help = {
     name: "pickle"
