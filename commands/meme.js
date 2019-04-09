@@ -29,14 +29,13 @@ module.exports.run = async (bot, message, args) => {
                     200
                 );
                 test.write("images/meme/meme_" + message.author.id.toString() + ".png");
-                message.channel.send("", {file: "images/meme/meme_" + message.author.id.toString() + ".png"});
                 setTimeout(function () {
                     try {
-                        fs.unlinkSync(path)
+                        message.channel.send("", {file: "images/meme/meme_" + message.author.id.toString() + ".png"});
                     } catch (err) {
                         console.error(err)
                     }
-                }, 10000);
+                }, 1000);
             });
         });
     }
