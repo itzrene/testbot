@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
                     } catch (err) {
                         console.error(err)
                     }
-                }, 3000);
+                }, 10000);
             });
         });
     }
