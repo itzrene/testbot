@@ -59,7 +59,7 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "hi") {
-    message.channel.send("Hello! 💓 " + message.author.toString());
+    message.channel.send("Helloo! 💓 " + message.author.toString());
   }
 });
 
