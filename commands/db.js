@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
         _id: mongoose.Types.ObjectID(),
         username: message.author.username,
         arguments: args[0]
-    })
+    });
 
     db.save()
         .then(result => console.log(result))
