@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     mongoose.connect(process.env.MONGODB);
 
     const db = new Db({
-        _id: mongoose.Types.ObjectID(),
+        _id: mongoose.Types.ObjectId(),
         username: message.author.username,
         arguments: args[0]
     });
