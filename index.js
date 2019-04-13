@@ -132,4 +132,19 @@ bot.on("message", async message => {
 
 });
 
+bot.on("message", async message => {
+
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  let currencyAmt = Math.floor(Math.random() * 20) + 1;
+  let baseAmt = Math.floor(Math.random() * 20) + 1;
+
+  if(currencyAmt === baseAmt){
+    db.add(`currency_${message.author.id}`, baseAmt);
+    message.react("🍵");
+  }
+
+});
+
 bot.login(process.env.BOT_TOKEN);
