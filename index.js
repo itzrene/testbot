@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 const fs = require("fs");
 const botconfig = require("./botconfig.json");
 bot.commands = new Discord.Collection();
+const db = require('quick.db');
 let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
