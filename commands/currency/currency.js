@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(args[0]){
         let target = message.mentions.members.first();
-        let targetBal = db.get(`currency_${target.id}`);
+        let targetBal = db.fetch(`currency_${target.id}`);
 
         if (targetBal === null) {
             targetBal = 0;
@@ -44,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
             .setColor(color)
         message.channel.send(embed)
     } else {
-        let bal = db.get(`currency_${message.author.id}`);
+        let bal = db.fetch(`currency_${message.author.id}`);
 
         if (bal === null) {
             bal = 0;
