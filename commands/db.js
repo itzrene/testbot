@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const config = require("../botconfig.json");
-const db = require("../models/db.js");
+const Db = require("../models/db.js");
 let color = config.color;
 
 module.exports.run = async (bot, message, args) => {
