@@ -117,58 +117,6 @@ bot.on("message", async message => {
     cooldown.add(message.author.id);
   }
   
-  let wasPicked = false;
-let messageSpawnedSent = false;
-let add = 0;
-
-bot.on("message", async message => {
-
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
-
-  let num1 = Math.floor(Math.random() * 25) + 1;
-  let num2 = Math.floor(Math.random() * 25) + 1;
-
-  let howMuch = Math.floor(Math.random() * 20) + 1;
-
-
-  if(num1 == num2 && wasPicked == false){
-    messageSpawnedSent = true;
-  }
-
-  let files = fs.readdirSync('images/tea/');
-  let teaImg = files[Math.floor(Math.random() * files.length)];
-console.log(num1 + " : " + num2)
-  if(messageSpawnedSent == true) {
-    message.channel.send("**" + howMuch + "** 🍵 have randomly spawned! Type `!pick` to pick them up!", {file: "images/tea/" + teaImg});
-    add = howMuch;
-    wasPicked = true;
-    messageSpawnedSent = false;
-    setTimeout(() => {
-      if(wasPicked == true && messageSpawnedSent == false) {
-        wasPicked = false;
-        messageSpawnedSent = false;
-        message.channel.send("**Nobody picked up!**");
-        add = 0;
-      }
-    }, 180000); //3 min
-  }
-
-    if (message.content == "!pick") {
-      if(wasPicked == true) {
-        let embed = new Discord.RichEmbed()
-            .setTitle("**" + message.author.username + "** has picked **" + add + "** 🍵!")
-            .setColor("0xb798f2");
-        message.channel.send(embed).then(msg => msg.delete(3000)); //3 sec
-        db.add(`currency_${message.author.id}`, add);
-        add = 0;
-        wasPicked = false;
-        messageSpawnedSent = false;
-      }
-      message.delete();
-  }
-
-});
 
 
   let messageArray = message.content.split(" ");
