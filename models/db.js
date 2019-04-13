@@ -6,4 +6,4 @@ const dbSchema = mongoose.Schema({
     arguments: String
 });
 
-module.exports = mongoose.model("db", dbSchema);
+module.exports = mongoose.model("Db", dbSchema);
