@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
         .then(result => console.log(result))
         .catch(err => console.log(err));
 
-    message.reply("Saved to the database!");
+    message.reply("Saved to the database!")
 
 }
 
