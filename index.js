@@ -8,6 +8,24 @@ let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
 
+bot.on("messageDelete", async message => {
+  let logs = await message.guild.fetchAuditLogs({type: 72});
+  let entry = logs.entries.first();
+
+  let embed = new Discord.RichEmbed()
+    .setTitle("**DELETED MESSAGE**")
+    .setColor("#fc3c3c")
+    .addField("Author", message.author.tag, true)
+    .addField("Channel", message.channel, true)
+    .addField("Message", message.content)
+    .addField("Executor", entry.executor)
+    .addField("Reason", entry.reason || "Unspecified")
+    .setFooter(`Message ID: ${message.id} | Author ID: ${message.author.id}`);
+
+  let channel = message.guild.channels.find(x => x.name === 'magical-creature-logs');
+  channel.send({embed});
+});
+
 var leaveMessages = [
   "didn't really like it here :(",
   "has left, bye",
