@@ -7,6 +7,7 @@ const db = require('quick.db');
 let cooldown = new Set();
 let cdseconds = 5;
 const prefix = "!";
+let color = botconfig.color;
 
 bot.on("messageDelete", async message => {
   let logs = await message.guild.fetchAuditLogs({type: 72});
@@ -14,13 +15,10 @@ bot.on("messageDelete", async message => {
 
   let embed = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
-    .setColor("#fc3c3c")
-    .addField("Author", message.author.tag, true)
-    .addField("Channel", message.channel, true)
-    .addField("Message", message.content)
-    .addField("Executor", entry.executor)
-    .addField("Reason", entry.reason || "Unspecified")
-    .setFooter(`Message ID: ${message.id} | Author ID: ${message.author.id}`);
+    .addField("User:", message.author.tag, true)
+    .addField("In:", message.channel, true)
+    .addField("Message:", message.content)
+    .setColor(color);
 
   let channel = message.guild.channels.find(x => x.name === 'magical-creature-logs');
   channel.send({embed});
