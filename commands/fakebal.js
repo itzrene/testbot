@@ -16,7 +16,11 @@ const options = {
     family: 4 // Use IPv4, skip trying IPv6
 };
 
-mongoose.connect(process.env.MONGODB, options);
+mongoose.connect(process.env.MONGODB, options).then(() => {
+console.log("Connected to Database");
+}).catch((err) => {
+    console.log("Not Connected to Database ERROR! ", err);
+});
 
 module.exports.run = async (bot, message, args) => {
 
