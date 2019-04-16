@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const mongoose = require("mongoose");
-const Money = require("./models/money.js");
+const Money = require("../models/money.js");
 const options = {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -15,7 +15,7 @@ const options = {
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
     family: 4 // Use IPv4, skip trying IPv6
 };
-let uri = 'mongodb+srv://AlwaysRejected:cverenko327_@magicalcreature-jfi8q.mongodb.net/Tutorial?retryWrites=true';
+let uri = process.env.MONGODB;
 mongoose.connect(uri, options);
 
 module.exports.run = async (bot, message, args) => {
