@@ -15,7 +15,7 @@ const options = {
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
     family: 4 // Use IPv4, skip trying IPv6
 };
-let uri = process.env.MONGODB;
+let uri = bitch;
 mongoose.connect(uri, options);
 
 module.exports.run = async (bot, message, args) => {
