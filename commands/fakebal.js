@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const mongoose = require("mongoose");
-const Money = require("../models/money.js");
+const Money = require("./models/money.js");
 const options = {
     useNewUrlParser: true,
     useCreateIndex: true,
