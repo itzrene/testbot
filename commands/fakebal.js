@@ -15,8 +15,8 @@ const options = {
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
     family: 4 // Use IPv4, skip trying IPv6
 };
-console.log(process.env.MONGOLAB_URI);
-mongoose.connect(process.env.MONGOLAB_URI, options).then(() => {
+console.log(process.env.PROD_MONGODB);
+mongoose.connect(process.env.PRODD_MONGODB, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
