@@ -23,7 +23,24 @@ console.log("Connected to Database");
 });
 
 module.exports.run = async (bot, message, args) => {
-    message.channel.send("hi");
+    Money.findOne({
+        userID: message.author.id,
+        serverID: message.guild.id
+    }, (err, money) => {
+        if (err) console.log(err);
+        console.log("1");
+        let embed = new Discord.RichEmbed()
+            .setTitle("Coins")
+            .setColor("#4000FF")
+            .setThumbnail(message.author.displayAvatarURL);
+        if (!money) {
+            embed.addField("Coins", "0", true);
+            return message.channel.send(embed);
+        } else {
+            embed.addField("Coins", money.money, true);
+            return message.channel.send(embed);
+        }
+    })
 }
 
 module.exports.help = {
