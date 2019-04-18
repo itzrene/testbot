@@ -16,8 +16,7 @@ const options = {
     family: 4 // Use IPv4, skip trying IPv6
 };
 console.log(process.env.PROD_MONGODB);
-let ur = process.env.PRODD_MONGODB;
-let uri = ur.toString();
+let uri = process.env.PRODD_MONGODB;
 mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
