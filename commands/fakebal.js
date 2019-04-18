@@ -15,7 +15,7 @@ const options = {
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
     family: 4 // Use IPv4, skip trying IPv6
 };
-
+console.log(process.env.MONGODB);
 mongoose.connect(process.env.MONGODB, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
