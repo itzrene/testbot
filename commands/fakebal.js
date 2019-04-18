@@ -16,7 +16,7 @@ const options = {
     family: 4 // Use IPv4, skip trying IPv6
 };
 
-mongoose.connect(process.env.MONGODB, options).then(() => {
+mongoose.connect("mongodb+srv://AlwaysRejected:cverenko327_@magicalcreature-jfi8q.mongodb.net/Tutorial?retryWrites=true", options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
