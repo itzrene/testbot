@@ -17,7 +17,7 @@ const options = {
 };
 console.log(process.env.PROD_MONGODB);
 let uri = process.env.PRODD_MONGODB;
-mongoose.connect(uri, options).then(() => {
+mongoose.connect(openUri(uri), options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
