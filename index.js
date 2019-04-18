@@ -17,7 +17,6 @@ bot.on("messageDelete", async message => {
     .setTitle("**DELETED MESSAGE**")
     .addField("User:", message.author.tag, true)
     .addField("In:", message.channel, true)
-    .addField("Deleted by:", entry.executor)
     .addField("Message:", message.content)
     .setColor(color);
 
