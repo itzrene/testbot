@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Money = require("../models/money.js");
 const options = {
     useNewUrlParser: true,
+    useMongoClient: true,
     useCreateIndex: true,
     useFindAndModify: false,
     autoIndex: false, // Don't build indexes
