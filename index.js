@@ -11,7 +11,6 @@ let color = botconfig.color;
 
 bot.on("messageDelete", async message => {
   let logs = await message.guild.fetchAuditLogs({type: 72});
-  let entry = logs.entries.first();
 
   let embed = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
