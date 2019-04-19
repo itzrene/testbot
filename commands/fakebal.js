@@ -20,7 +20,7 @@ const options = {
     debug: true
 };
 console.log(process.env.MONGODB_URI);
-let uri = await process.env.MONGODB_URI;
+let uri = process.env.MONGODB_URI;
 mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
