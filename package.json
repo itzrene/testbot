@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "google": "^2.1.0",
     "jimp": "^0.6.1",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.2.2",
@@ -20,6 +21,7 @@
     "quick.db": "^7.0.0-b22",
     "request": "^2.88.0",
     "snekfetch": "^4.0.4",
-    "superagent": "^5.0.2"
+    "superagent": "^5.0.2",
+    "weather-js": "^2.0.0"
   }
 }
