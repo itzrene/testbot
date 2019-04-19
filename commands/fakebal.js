@@ -16,7 +16,7 @@ const options = {
     family: 4, // Use IPv4, skip trying IPv6
     host: 'magicalcreature-jfi8q.mongodb.net',
     port: 27017,
-    path: '/commands/fakebal.js',
+    path: '../commands/fakebal.js',
     debug: true
 };
 console.log(process.env.MONGODB_URI);
