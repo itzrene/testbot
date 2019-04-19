@@ -16,18 +16,19 @@ const options = {
     family: 4, // Use IPv4, skip trying IPv6
     host: 'magicalcreature-jfi8q.mongodb.net',
     port: 27017,
-    path: '../commands/fakebal.js',
+    path: '/',
     debug: true
 };
 console.log(process.env.MONGODB_URI);
 let uri = process.env.MONGODB_URI;
-mongoose.connect(uri, options).then(() => {
+
+
+module.exports.run = async (bot, message, args) => {
+    mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
 });
-
-module.exports.run = async (bot, message, args) => {
     Money.findOne({
         userID: message.author.id,
         serverID: message.guild.id
