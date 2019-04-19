@@ -6,7 +6,7 @@ let color = config.color;
 
 module.exports.run = async (bot, message, args) => {
 
-    mongoose.connect(process.env.MONGODB, {
+    mongoose.connect(process.env.MONGODB_URI, {
         useNewUrlParser: true
     });
 
