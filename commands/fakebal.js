@@ -14,10 +14,6 @@ const options = {
     connectTimeoutMS: 10000, // Give up initial connection after 10 seconds
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
     family: 4, // Use IPv4, skip trying IPv6
-    host: 'magicalcreature-jfi8q.mongodb.net',
-    port: 27017,
-    path: '/',
-    debug: true
 };
 console.log(process.env.MONGODB_URI);
 let uri = process.env.MONGODB_URI;
