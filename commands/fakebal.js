@@ -16,10 +16,11 @@ const options = {
     family: 4, // Use IPv4, skip trying IPv6
     host: 'magicalcreature-jfi8q.mongodb.net',
     port: 27017,
-    path: '/'
+    path: '/',
+    debug: true
 };
 console.log(process.env.MONGODB_URI);
-let uri = process.env.MONGODB_URI;
+let uri = await process.env.MONGODB_URI;
 mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
