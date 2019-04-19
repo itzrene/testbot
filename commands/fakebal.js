@@ -17,14 +17,13 @@ const options = {
 };
 console.log(process.env.MONGODB_URI);
 let uri = process.env.MONGODB_URI;
-
-
-module.exports.run = async (bot, message, args) => {
-    mongoose.connect(uri, options).then(() => {
+mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
 });
+
+module.exports.run = async (bot, message, args) => {
     Money.findOne({
         userID: message.author.id,
         serverID: message.guild.id
