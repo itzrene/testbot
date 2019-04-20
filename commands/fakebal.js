@@ -15,8 +15,8 @@ const options = {
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
     family: 4, // Use IPv4, skip trying IPv6
 };
-console.log(process.env.MONGODB_URI);
-let uri = process.env.MONGODB_URI;
+console.log(process.env.PASSWORD);
+let uri = "mongodb://AlwaysRejected:" + process.env.PASSWORD + "@magicalcreature-jfi8q.mongodb.net:27017/Tutorial?retryWrites=true";
 mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
