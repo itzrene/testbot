@@ -16,7 +16,7 @@ const options = {
     family: 4, // Use IPv4, skip trying IPv6
 };
 console.log(process.env.PASSWORD);
-let uri = "mongodb://AlwaysRejected:" + process.env.PASSWORD + "@magicalcreature-jfi8q.mongodb.net:27017/Tutorial?retryWrites=true";
+let uri = "mongodb://AlwaysRejected:cverenko327_@magicalcreature-jfi8q.mongodb.net:27017/Tutorial?retryWrites=true";
 mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
