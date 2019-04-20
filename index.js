@@ -39,7 +39,7 @@ const responseObject = {
   "shenny": "wha- cucumbers?",
   "shen?": "wha- cucumbers?",
   "shenny?": "wha- cucumbers?",
-  "lol": "roflmaotntpmp",
+  //"lol": "roflmaotntpmp",
   "do it": "**JUST DO IT!**",
   "jacob": "<:plshug:568758192558047242> https://media.giphy.com/media/l0MYAs5E2oIDCq9So/giphy.gif",
   "no u": "<:notlikemiya:507566109528948744>"
