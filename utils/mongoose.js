@@ -12,8 +12,8 @@ module.exports = {
             family: 4
         };
 
-        mongoose.connect("mongodb://AlwaysRejected:cverenko327_@magicalcreature-jfi8q.mongodb.net:27017/Tutorial?retryWrites=true", dbOptions);
-        //mongoose.connect('mongodb+srv://AlwaysRejected:cverenko327_@magicalcreature-jfi8q.mongodb.net/Tutorial?retryWrites=true', dbOptions);
+        mongoose.connect("mongodb://AlwaysRejected:" + process.env.PASSWORD + "@magicalcreature-jfi8q.mongodb.net:27017/Tutorial?retryWrites=true", dbOptions);
+        //mongoose.connect('mongodb+srv://AlwaysRejected:password@magicalcreature-jfi8q.mongodb.net/Tutorial?retryWrites=true', dbOptions);
         mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
 
