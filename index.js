@@ -17,7 +17,7 @@ bot.on("messageDelete", async message => {
     .addField("User:", message.author.tag, true)
     .addField("In:", message.channel, true)
     .addField("Message:", message.content)
-    .setColor(color); i
+    .setColor(color);
 
   let channel = message.guild.channels.find(x => x.name === 'magical-creature-logs');
   channel.send({embed});
