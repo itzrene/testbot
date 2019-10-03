@@ -25,13 +25,13 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
-     let candies = c
+       let candies = Math.floor(Math.random() * 50) + 1;
 
-  let embed = new Discord.RichEmbed()
-  .setColor("0xEB6123")
-  .setThumbnail("https://mynorth.com/wp-content/uploads/2016/09/pumpkins-and-gourds-900x473.jpeg")
-  .setTitle("Happy halloween! 🎃:")
-  .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
+        let embed = new Discord.RichEmbed()
+        .setColor("0xEB6123")
+        .setThumbnail("https://mynorth.com/wp-content/uploads/2016/09/pumpkins-and-gourds-900x473.jpeg")
+        .setTitle("Happy halloween! 🎃:")
+        .addField("You got 10 candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
   message.channel.send(embed);
    }
