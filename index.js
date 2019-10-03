@@ -9,6 +9,35 @@ let cdseconds = 5;
 const prefix = "!";
 let color = botconfig.color;
 
+//HALLOWEEN SPECIAL
+var pumpkins = [
+    "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.southernliving.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1565112198%2FGettyImages-982549426.jpg%3Fitok%3DRPbKsG3U&w=400&c=sc&poi=face&q=85",
+    "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/10/07/12/pumpkins.jpg?w968h681",
+    "https://www.kikkoman.co.uk/assets/image-cache/uploads/general/shutterstock_724312888_1.26b8b3fd.jpg"
+];
+
+bot.on("message", function(message) {
+   if (message.content.toLowerCase() == "happy halloween") {
+     message.channel.send("Happy halloween! 🎃");
+     message.channel.send(pumpkins[Math.floor(Math.random() * pumpkins.length)]);
+   }
+});
+
+bot.on("message", function(message) {
+   if (message.content.toLowerCase() == "trick or treat") {
+     let candies = Math.floor(Math.random() * 50) + 1;
+
+  let embed = new Discord.RichEmbed()
+  .setColor("0xEB6123")
+  .setThumbnail("https://mynorth.com/wp-content/uploads/2016/09/pumpkins-and-gourds-900x473.jpeg")
+  .setTitle("Happy halloween! 🎃:")
+  .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
+
+  message.channel.send(embed);
+   }
+});
+//------------------------
+
 bot.on("messageDelete", async message => {
   let logs = await message.guild.fetchAuditLogs({type: 72});
 
