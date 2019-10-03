@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const bot = new Discord.Client();
 
 module.exports.run = async (bot, message, args) => {
 
@@ -13,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 bot.on("message", function(message) {
-    if (message.content.toLowerCase() == "happy") {
+    if (message.content.toLowerCase() == "happy halloween") {
       message.channel.send("Hello! 💓 " + message.author.toString());
     }
   });
