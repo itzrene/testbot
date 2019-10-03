@@ -10,12 +10,6 @@ const prefix = "!";
 let color = botconfig.color;
 
 //HALLOWEEN SPECIAL
-var pumpkins = [
-    "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.southernliving.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1565112198%2FGettyImages-982549426.jpg%3Fitok%3DRPbKsG3U&w=400&c=sc&poi=face&q=85",
-    "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/10/07/12/pumpkins.jpg?w968h681",
-    "https://www.kikkoman.co.uk/assets/image-cache/uploads/general/shutterstock_724312888_1.26b8b3fd.jpg"
-];
-
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "happy halloween") {
    let ok = Math.floor(Math.random() * 3) + 1;
@@ -31,7 +25,7 @@ bot.on("message", function(message) {
         .setColor("0xEB6123")
         .setThumbnail("https://mynorth.com/wp-content/uploads/2016/09/pumpkins-and-gourds-900x473.jpeg")
         .setTitle("Happy halloween! 🎃:")
-        .addField("You got 10 candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
+        .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
   message.channel.send(embed);
    }
