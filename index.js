@@ -23,7 +23,7 @@ bot.on("message", function(message) {
 
         let embed = new Discord.RichEmbed()
         .setColor("0xEB6123")
-        .setThumbnail("https://mynorth.com/wp-content/uploads/2016/09/pumpkins-and-gourds-900x473.jpeg")
+        .setThumbnail("https://images-ext-2.discordapp.net/external/1AZHVkuyQjkYr0zxqUu2vWUP5RDW8mQo_8nryHS6pu4/https/media2.s-nbcnews.com/j/newscms/2014_40/695336/141001-halloween-candy-corn-1700_539e2169509dc704b46829727907d138.fit-760w.jpg")
         .setTitle("Happy halloween! 🎃:")
         .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
