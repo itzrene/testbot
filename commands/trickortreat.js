@@ -9,24 +9,6 @@ module.exports.run = async (bot, message, args) => {
   .addField("You got 10 candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
   message.channel.send(embed);
-
-  bot.on("message", function(message) {
-    if (message.content.toLowerCase() == "happy halloween") {
-      message.channel.send("Hello! 💓 " + message.author.toString());
-    }
-  });
-
-  bot.on("message", function(message) {
-      if (message.content.toLowerCase() == "trick or treat") {
-        message.channel.send("Happy halloween! 🎃" + message.author.toString());
-      }
-    });
-
-    bot.on("message", function(message) {
-          if (message.content.toLowerCase() == "happy halloween") {
-            message.channel.send("Happy halloween! 🎃" + message.author.toString());
-          }
-        });
 }
 
 module.exports.help = {
