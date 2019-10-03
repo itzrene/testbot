@@ -18,14 +18,14 @@ var pumpkins = [
 
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "happy halloween") {
-     message.channel.send("Happy halloween! 🎃");
-     message.channel.send(pumpkins[Math.floor(Math.random() * pumpkins.length)]);
+   let ok = Math.floor(Math.random() * 3) + 1;
+     message.channel.send("Happy halloween! 🎃", {files: ["images/halloween/" + ok.toString() + ".jpg"]});
    }
 });
 
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
-     let candies = Math.floor(Math.random() * 50) + 1;
+     let candies = c
 
   let embed = new Discord.RichEmbed()
   .setColor("0xEB6123")
