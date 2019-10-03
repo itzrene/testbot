@@ -9,7 +9,14 @@ module.exports.run = async (bot, message, args) => {
   .addField("You got 10 candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
   message.channel.send(embed);
+  
 }
+
+bot.on("message", function(message) {
+    if (message.content.toLowerCase() == "happy") {
+      message.channel.send("Hello! 💓 " + message.author.toString());
+    }
+  });
 
 module.exports.help = {
   name: "trickortreat"
