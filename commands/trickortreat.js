@@ -1,23 +1,18 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client();
 
 module.exports.run = async (bot, message, args) => {
+  
+  let candies = Math.floor(Math.random() * 50) + 1;
 
   let embed = new Discord.RichEmbed()
   .setColor("0xEB6123")
-  .setThumbnail("https://mynorth.com/wp-content/uploads/2016/09/pumpkins-and-gourds-900x473.jpeg")
+  .setThumbnail("https://media2.s-nbcnews.com/j/newscms/2014_40/695336/141001-halloween-candy-corn-1700_539e2169509dc704b46829727907d138.fit-760w.jpg")
   .setTitle("Happy halloween! 🎃:")
-  .addField("You got 10 candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
+  .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
   message.channel.send(embed);
   
 }
-
-bot.on("message", function(message) {
-    if (message.content.toLowerCase() == "happy halloween") {
-      message.channel.send("Hello! 💓 " + message.author.toString());
-    }
-  });
 
 module.exports.help = {
   name: "trickortreat"
