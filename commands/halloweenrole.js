@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
             message.member.removeRole("629377122195996673");
             message.channel.send(message.author.toString() + " I removed you the **S p o o k y - v i b e s** role! 🎃");
         } else {
-            message.channel.send(message.author.toString() + " You don't have the **S p o o k y - v i b e s** role! 🎃");
+            message.channel.send(message.author.toString() + " You don't have the **S p o o k y - v i b e s** role! 👻");
         }
     }
 
