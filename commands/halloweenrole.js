@@ -16,7 +16,6 @@ module.exports.run = async (bot, message, args) => {
         if(message.member.roles.find("name", "S p o o k y - v i b e s")){
             message.member.removeRole("629377122195996673");
             message.channel.send(message.author.toString() + " I removed you the **S p o o k y - v i b e s** role! 🎃");
-            message.channel.send(message.author.toString() + " You already have this role! 👻");
         } else {
             message.channel.send(message.author.toString() + " You don't have the **S p o o k y - v i b e s** role! 🎃");
         }
