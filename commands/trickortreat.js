@@ -14,10 +14,9 @@ module.exports.run = async (bot, message, args) => {
   
   function candiesEmoji(length) {
     var msg = '';
-    var emoji = '🍫🍬🍭';
-    var emojiLength = emoji.length;
+    var emoji = '🍫 🍬 🍭';
     for ( var i = 0; i < length; i++ ) {
-        msg += emoji.charAt(Math.floor(Math.random() * emojiLength));
+        msg += emoji.charAt(Math.floor(Math.random() * emoji.length));
     }
     return msg;
   }
