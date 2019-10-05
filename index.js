@@ -78,7 +78,7 @@ bot.on("message", (message) => {
 
 let channel = bot.channels.get('508762004505362471');
 
-fs.readdir("./commands/", (err, files, message) => {
+fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js");
@@ -90,7 +90,6 @@ fs.readdir("./commands/", (err, files, message) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
-    channel.sendMessage(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
 });
@@ -135,6 +134,7 @@ bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸", {type: "WATCHING"});
+  channel.sendMessage("Connected!");
   channel.sendMessage(`${bot.user.username} is online on ${bot.guilds.size} servers`);
 
 });
