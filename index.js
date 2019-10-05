@@ -32,14 +32,29 @@ bot.on("message", function(message) {
 });
 //------------------------
 
-bot.on("message", async message => {
+/**bot.on("message", async message => {
    let channel = bot.channels.get('508762004505362471');
    if(message.channel.type == "dm") {
         const msgs = await message.channel.awaitMessages(msg => {
            channel.sendMessage("DM: " + msg.content.toString());
         });
       }
-});
+});**/
+
+bot.on('message', msg => {
+    if (msg.content === 'ok') {
+        msg.reply("Pong!")
+        if (bot.user.lastMessage == null) {
+            const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === bot.user.id, { time: 10000 });
+            collector.on('collect', message => {
+                bot.log(message.content);
+                collector.stop("Got my message");
+            })
+        } else {
+            console.log(bot.user.lastMessage.content);
+        }
+    }
+}
 
 bot.on("messageDelete", async message => {
   let logs = await message.guild.fetchAuditLogs({type: 72});
