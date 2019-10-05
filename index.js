@@ -88,6 +88,8 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
+    let channel = bot.channels.get('508762004505362471');
+    channel.sendMessage(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
 });
@@ -132,8 +134,8 @@ bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸", {type: "WATCHING"});
-  let channel = bot.channels.get('506541840292511765');
-  channel.sendMessage("test");
+  let channel = bot.channels.get('508762004505362471');
+  channel.sendMessage("${bot.user.username} is online on ${bot.guilds.size} servers!");
 
 });
 
