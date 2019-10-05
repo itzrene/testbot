@@ -78,8 +78,8 @@ bot.on("message", (message) => {
 
 let channel = bot.channels.get('508762004505362471');
 
-function sendmsg() {
-    return channel.send(`${f} loaded!`);
+function sendmsg(user, message) {
+    return channel.sendMessage(`${f} loaded!`);
 }
 
 fs.readdir("./commands/", (err, files) => {
