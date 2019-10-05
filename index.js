@@ -132,7 +132,7 @@ bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸", {type: "WATCHING"});
-  var channel = client.channels.get('506541840292511765');
+  let channel = bot.channels.get('506541840292511765');
   channel.sendMessage("test");
 
 });
