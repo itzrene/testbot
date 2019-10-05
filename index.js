@@ -76,6 +76,11 @@ bot.on("message", (message) => {
   }
 });
 
+function sendmsg(){
+   let channel = bot.channels.get('508762004505362471');
+   channel.sendMessage("hi");
+}
+
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
@@ -88,8 +93,7 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
-    let channel = bot.channels.get('508762004505362471');
-    channel.send("ok!");
+    sendmsg();
     bot.commands.set(props.help.name, props);
   });
 });
