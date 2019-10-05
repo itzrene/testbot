@@ -92,7 +92,7 @@ const responseObject = {
   "no u": "<:notlikemiya:507566109528948744>",
   "alex": "Which one?",
   "alex?": "Which one?",
-  "i believe i can fly": "https://cdn.discordapp.com/attachments/506541840292511765/630010867626541057/20191005_135426.gif"
+  "i believe i can fly": "http://tiny.cc/ibelieveicanfly"
 };
 
 bot.on("message", (message) => {
