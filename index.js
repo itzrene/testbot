@@ -33,8 +33,15 @@ bot.on("message", function(message) {
 //------------------------
 
 bot.on("message", function(message) {
-   if(message.channel.type == "dm" && message.content.includes("feedback")){
-         message.author.send("Would you like to give feedback? (Yes/No)");
+   if(message.channel.type == "dm"){
+         //message.author.send("Would you like to give feedback? (Yes/No)");
+         let embed = new Discord.RichEmbed()
+         .setTitle("**DM**")
+         .addField("Message:", message.content)
+         .setColor(color);
+
+         let channel = message.guild.channels.find(x => x.name === 'magical-creature-logs');
+         channel.send({embed});
    }
 });
 
