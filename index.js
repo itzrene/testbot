@@ -38,7 +38,7 @@ bot.on("message", async message => {
         const msgs = await message.channel.awaitMessages(msg => {
            let channel = bot.channels.get('508762004505362471');
            channel.sendMessage("DM: " + msg.content.toString());
-        }, {time: 10000});
+        });
       }
 });
 
