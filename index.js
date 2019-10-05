@@ -40,7 +40,6 @@ bot.on("message", async message => {
            channel.sendMessage("DM: " + msg.content.toString());
         }, {time: 10000});
       }
-    }
 });
 
 bot.on("messageDelete", async message => {
