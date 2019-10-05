@@ -20,6 +20,7 @@ module.exports.run = async (bot, message, args, member) => {
 }
 
 module.exports.help = {
-    name: ["flip", "bitch"]
+    name: "flip",
+    aliases: ["copycat", "repeat"]
 }
 
