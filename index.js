@@ -12,7 +12,7 @@ let color = botconfig.color;
 //HALLOWEEN SPECIAL
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "happy halloween") {
-   let ok = Math.floor(Math.random() * 3) + 1;
+   let ok = Math.floor(Math.random() * 6) + 1;
      message.channel.send("Happy halloween! 🎃", {files: ["images/halloween/" + ok.toString() + ".jpg"]});
    }
 });
