@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
     let username = message.guild.member.displayName;
-    message.member.setNickname(username.toString() + " 🎃");
-    message.channel.send("did it work" + username.toString());
+    //message.member.setNickname(username.toString() + " 🎃");
+    message.channel.send("did it work " + username.toString());
     
     /**
     if(!args[0]) {
