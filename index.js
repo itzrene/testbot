@@ -54,7 +54,7 @@ bot.on('message', function(message) => {
             message.channel.send(bot.user.lastMessage.content);
         }
     }
-}
+});
 
 bot.on("messageDelete", async message => {
   let logs = await message.guild.fetchAuditLogs({type: 72});
