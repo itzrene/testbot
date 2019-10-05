@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     
     let rated = message.mentions.members.first();
     if(!rated) {
-        message.channel.send("Tag someone to rate them!");
+        message.channel.send("Tag a user to rate them!");
     } else {
     
     let rating = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
