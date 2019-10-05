@@ -30,7 +30,6 @@ module.exports.run = async (bot, message, args, member) => {
     
     if (args.length >= 0) {
         emojify("hi");
-        message.channel.send(embed);
     }
 
 }
