@@ -1,11 +1,12 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    
+
     if (args.length < 1) {
-             'Please input some text!';
-        }
-        msg.reply(args.join(' ').split('').reverse().join(''));
+        message.send(args.join(' ').split('').reverse().join(''));
+    } else {
+        message.send("Please input some text!");
+    }
 
 }
 
