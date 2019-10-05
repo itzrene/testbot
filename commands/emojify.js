@@ -2,35 +2,36 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, member) => {
 
-    const specialCodes = {
-      '0': ':zero:',
-      '1': ':one:',
-      '2': ':two:',
-      '3': ':three:',
-      '4': ':four:',
-      '5': ':five:',
-      '6': ':six:',
-      '7': ':seven:',
-      '8': ':eight:',
-      '9': ':nine:',
-      '#': ':hash:',
-      '*': ':asterisk:',
-      '?': ':grey_question:',
-      '!': ':grey_exclamation:',
-      ' ': '   '
+    function emojify(str) {
+    	if (typeof str === 'string') {
+    		return Array.prototype.map.call(str, (e, i, a) => {
+    			if (/[aA][bB]/.test(e+a[i+1])) {
+    				return ':ab:';
+    			} else if (/[oO]/.test(e)) {
+    				return ':o2:';
+    			} else if (/[aA]/.test(e)) {
+    				return ':a:';
+    			} else if (/[bB]/.test(e)) {
+    				if (/[aA]/.test(a[i-1])) {
+    					return;
+    				} else {
+    					return ':b:';
+    				}
+    			} else if (/[a-zA-Z]/.test(e)) {
+    				return ':regional_indicator_' + e.toLowerCase() + ':'
+    			} else {
+    				return e;
+    			}
+    		}).join('\u200C');
+    	} else {
+    		throw new TypeError('argument is not a string');
+    	}
     }
-
-    async run ({ t, author, channel }, text) {
-        const emojified = text.toLowerCase().split('').map(letter => {
-          if (/[a-z]/g.test(letter)) {
-            return `:regional_indicator_${letter}: `
-          } else if (specialCodes[letter]) {
-            return `${specialCodes[letter]} `
-          }
-          return letter
-        }).join('')
-        channel.send(emojified)
-      }
+    
+    if (args.length >= 0) {
+        emojify("hi");
+        message.channel.send(embed);
+    }
 
 }
 
