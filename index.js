@@ -18,6 +18,12 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
+   if((message.channel.type == "dm" && message.content.includes("feedback")){
+         message.author.send("Would you like to give feedback? (Yes/No)");
+   }
+}
+
+bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
        let candies = Math.floor(Math.random() * 50) + 1;
 
