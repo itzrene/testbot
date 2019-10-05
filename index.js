@@ -41,17 +41,17 @@ bot.on("message", function(message) {
       }
 });**/
 
-bot.on('message', msg => {
-    if (msg.content === 'ok') {
-        msg.reply("Pong!")
+bot.on('message', function(message) => {
+    if (message.content === 'ok') {
+        message.channel.reply("Pong!")
         if (bot.user.lastMessage == null) {
-            const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === bot.user.id, { time: 10000 });
+            const collector = new Discord.MessageCollector(message.channel, m => m.author.id === bot.user.id, { time: 10000 });
             collector.on('collect', message => {
-                bot.log(message.content);
+                message.channel.send(message.content);
                 collector.stop("Got my message");
             })
         } else {
-            console.log(bot.user.lastMessage.content);
+            message.channel.send(bot.user.lastMessage.content);
         }
     }
 }
