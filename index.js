@@ -18,25 +18,25 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-   if((message.channel.type == "dm" && message.content.includes("feedback")){
-         message.author.send("Would you like to give feedback? (Yes/No)");
-   }
-}
-
-bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
        let candies = Math.floor(Math.random() * 50) + 1;
 
         let embed = new Discord.RichEmbed()
         .setColor("0xEB6123")
         .setThumbnail("https://images-ext-2.discordapp.net/external/1AZHVkuyQjkYr0zxqUu2vWUP5RDW8mQo_8nryHS6pu4/https/media2.s-nbcnews.com/j/newscms/2014_40/695336/141001-halloween-candy-corn-1700_539e2169509dc704b46829727907d138.fit-760w.jpg")
-        .setTitle("Happy halloween! 🎃:")
+        .setTitle("Happy halloween! 🎃")
         .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
   message.channel.send(embed);
    }
 });
 //------------------------
+
+bot.on("message", function(message) {
+   if(message.channel.type == "dm" && message.content.includes("feedback")){
+         message.author.send("Would you like to give feedback? (Yes/No)");
+   }
+}
 
 bot.on("messageDelete", async message => {
   let logs = await message.guild.fetchAuditLogs({type: 72});
