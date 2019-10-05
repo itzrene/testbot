@@ -1,20 +1,20 @@
-const Discord = require("discord.js");
-const config = require("../botconfig.json");
-const errors = require("../utils/errors.js");
+const Discord = require("discord.js);
 
 module.exports.run = async (bot, message, args) => {
     
     let rated = message.mentions.members.first();
     if(!rated) return message.channel.send("Tag someone to rate them!");
     
-    let rates = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    let rating = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
     
-    let result = Math.floor((Math.random() * rates.length));
+    let result = Math.floor((Math.random() * rating.length));
     
     if(rated.user.id === message.author.id) {
-      return message.channel.send(`**${message.author.username}**, I'd give you ${result}/10<:thonk:427846193503272960>`);
-    } else return message.channel.send(`I'd give **__${ratus.user.username}__** ${result}/10 <:thonk:427846193503272960>`);
-
+      message.channel.send(`**${message.author.username}**, I'd give you ${result}/10 <:engine2:569170469174116363>`);
+    } else {
+      message.channel.send(`I'd give **__${rated.user.username}__** ${result}/10 <:engine2:569170469174116363>`);
+    }
+    
 }
 
 module.exports.help = {
