@@ -33,11 +33,12 @@ bot.on("message", function(message) {
 //------------------------
 
 bot.on("message", async message => {
-   if(message.channel.type === "dm") {
+   if(message.channel.type == "dm") {
         const msgs = await message.channel.awaitMessages(msg => {
-           let channel = bot.channels.get('508762004505362471');
-           channel.sendMessage("DM: " + msg.content.toString());
+           
         });
+      let channel = bot.channels.get('508762004505362471');
+           channel.sendMessage("DM: " + msg.content.toString());
       }
 });
 
