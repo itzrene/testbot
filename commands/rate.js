@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     if(rated.user.id === message.author.id) {
       message.channel.send(`**${message.author.username}**, I'd give you ${result}/10 <:engine2:569170469174116363>`);
     } else {
-            message.channel.send(`I'd give **__${rated.user.username}__** ${result}/10 <:engine2:569170469174116363>`);
+            message.channel.send(`I'd give **${rated.user.username}** ${result}/10 <:engine2:569170469174116363>`);
         }
     }
     
