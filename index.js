@@ -78,7 +78,7 @@ bot.on("message", (message) => {
 
 function sendmsg(){
    let channel = bot.channels.get('508762004505362471');
-   channel.sendMessage("hi");
+   return channel.sendMessage("hi");
 }
 
 fs.readdir("./commands/", (err, files) => {
