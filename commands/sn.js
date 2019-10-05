@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     let username = message.guild.member.displayName;
     message.member.setNickname(username + " 🎃");
+    message.channel.send("ok");
     
     /**
     if(!args[0]) {
