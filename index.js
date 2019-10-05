@@ -135,7 +135,7 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("| 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸", {type: "WATCHING"});
   let channel = bot.channels.get('508762004505362471');
-  channel.sendMessage("${bot.user.username} is online on ${bot.guilds.size} servers!");
+  channel.sendMessage(`${bot.user.username} is online on ${bot.guilds.size} servers`);
 
 });
 
