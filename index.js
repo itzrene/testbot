@@ -92,7 +92,7 @@ const responseObject = {
   "no u": "<:notlikemiya:507566109528948744>",
   "alex": "Which one?",
   "alex?": "Which one?",
-  "i believe i can fly": {file: "images/o.gi"}
+  "i believe i can fly": {file: "images/o.gif"}
 };
 
 bot.on("message", (message) => {
