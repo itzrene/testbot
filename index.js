@@ -91,7 +91,8 @@ const responseObject = {
   "jacob": "<:plshug:568758192558047242> https://media.giphy.com/media/l0MYAs5E2oIDCq9So/giphy.gif",
   "no u": "<:notlikemiya:507566109528948744>",
   "alex": "Which one?",
-  "alex?": "Which one?"
+  "alex?": "Which one?",
+  "i believe i can fly": {file: "images/o.gif"}
 };
 
 bot.on("message", (message) => {
