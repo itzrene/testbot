@@ -88,6 +88,8 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
+    let channel = bot.channels.get('508762004505362471');
+    channel.send("ok!");
     bot.commands.set(props.help.name, props);
   });
 });
