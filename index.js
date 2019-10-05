@@ -33,7 +33,7 @@ bot.on("message", function(message) {
 //------------------------
 
 bot.on("message", function(message) {
-   if((message.channel.type === "dm" && message.content.includes("feedback")) {
+   if(message.channel.type === "dm" && message.content.includes("feedback")) {
         message.author.send("Would you like to give feedback? (Yes/No)");
         const msgs = await message.channel.awaitMessages(msg => {
            let channel = bot.channels.get('508762004505362471');
