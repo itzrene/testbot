@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("0xEB6123")
   .setThumbnail("https://media2.s-nbcnews.com/j/newscms/2014_40/695336/141001-halloween-candy-corn-1700_539e2169509dc704b46829727907d138.fit-760w.jpg")
   .setTitle("Happy halloween! 🎃:")
-  .addField("You got " + candies.toString() + " candies!", candiesEmoji)
+  .addField("You got " + candies.toString() + " candies!", candiesEmoji.toString())
 
   message.channel.send(embed);
   
