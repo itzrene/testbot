@@ -41,7 +41,7 @@ bot.on("message", function(message) {
       }
 });**/
 
-bot.on('message', function(message) {
+/**bot.on('message', function(message) {
     if (message.content === 'ok') {
         message.channel.send("Pong!")
         if (bot.user.lastMessage == null) {
@@ -54,7 +54,7 @@ bot.on('message', function(message) {
             message.channel.send(bot.user.lastMessage.content);
         }
     }
-});
+});**/
 
 bot.on("messageDelete", async message => {
   let logs = await message.guild.fetchAuditLogs({type: 72});
