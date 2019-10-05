@@ -78,11 +78,7 @@ bot.on("message", (message) => {
 
 let channel = bot.channels.get('508762004505362471');
 
-function sendmsg(user, message) {
-    return channel.sendMessage(`${f} loaded!`);
-}
-
-fs.readdir("./commands/", (err, files) => {
+fs.readdir("./commands/", (err, files, message) => {
 
   if(err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js");
@@ -94,7 +90,7 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
-     sendmsg();
+    channel.sendMessage(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
 });
