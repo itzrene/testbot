@@ -34,7 +34,7 @@ bot.on("message", async message => {
        con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
        if (err) throw err;
        console.log(rows);
-       }
+       });
 });
 
 //HALLOWEEN SPECIAL
