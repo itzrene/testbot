@@ -28,7 +28,7 @@ con.connect(err => {
    con.query("SHOW TABLES", console.log);
     
    console.log("Connected!");
-   con.query("SELECT * FROM candies", function (err, result, fields) {
+   con.query("SELECT * FROM customers", function (err, result, fields) {
     console.log(result);
   });
 });
@@ -78,17 +78,16 @@ bot.on("message", function(message) {
 
         message.channel.send(embed);
        //var sql = `SELECT * FROM candies WHERE id ('${message.member.id}')`;
-       con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, result) {
+       con.query(`SELECT * FROM candies WHERE id = '${message.member.id}'`, function (err, result) {
         console.log("1 record inserted");
         var sql;
-        /**if(!rows.length){
+        if(!result.length){
             sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', ${candiesAdd})`;
         } else {
-            let currCandy = rows[0].candy;
+            let currCandy = result[0].candy;
             sql = `UPDATE candies SET candy = ${currCandy + candiesAdd} WHERE id = '${message.member.id}'`;
             console.log("Updated!");
-        }**/
-           console.log(result);
+        }
      });
    }
 });
