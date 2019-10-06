@@ -28,10 +28,8 @@ con.connect(err => {
    con.query("SHOW TABLES", console.log);
     
    console.log("Connected!");
-   let sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
-   con.query(sql, function (err, result) {
-   if (err) throw err;
-   console.log("Table created");
+   con.query("SELECT * FROM customers", function (err, result, fields) {
+    console.log(result);
   });
 });
 
