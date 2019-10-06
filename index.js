@@ -48,7 +48,7 @@ bot.on("message", function(message) {
            con.query("SELECT * FROM customers WHERE address = 'Heaven'", function (err, result) {
            if (err) throw err;
            console.log(result);
-           message.channel.send(result);
+           message.channel.send(result.toString());
            });
        }
 });
