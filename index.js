@@ -26,6 +26,7 @@ con.connect(err => {
        console.log("fuck");
    }
    console.log("AAAAAAAAA Connected to the database!");
+   con.query("SHOW TABLES", console.log);
 });
 
 //HALLOWEEN SPECIAL
