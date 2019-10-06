@@ -22,7 +22,7 @@ var con = mysql.createConnection({
 
 con.connect(err => {
    if(err) throw err;
-   console.log("Connected to the database!");
+   console.log("AAAAAAAAA Connected to the database!");
 });
 
 //HALLOWEEN SPECIAL
