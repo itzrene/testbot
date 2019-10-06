@@ -40,14 +40,13 @@ bot.on("message", function(message) {
                     console.log("---------------------------");
                 }
             });**/
-           if (err) throw err;
-  console.log("Connected!");
-  var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
-  con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("Table created");
-  });
-        }
+           //if (err) throw err;
+           console.log("Connected!");
+           con.query("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))", (err, result) {
+           //if (err) throw err;
+           console.log("Table created");
+           });
+       }
 });
 
 //HALLOWEEN SPECIAL
