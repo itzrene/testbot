@@ -35,7 +35,7 @@ bot.on("message", function(message) {
             con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
                 if (err) {
                     //throw err;
-                    console.log("frigg");
+                    console.log("friggg");
                 }
             });
         }
