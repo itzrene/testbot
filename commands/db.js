@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+/**const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const config = require("../botconfig.json");
 const Db = require("../models/ohmygod.js");
@@ -26,3 +26,4 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "db"
 }
+**/
