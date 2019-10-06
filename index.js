@@ -28,7 +28,7 @@ con.connect(err => {
    con.query("SHOW TABLES", console.log);
 });
 
-bot.on("message", function(message) => {
+bot.on("message", function(message) {
        if(message.content.toLowerCase() == "try") {
             let xp = Math.floor(Math.random() * 50) + 1;
             message.channel.send(xp);
