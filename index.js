@@ -29,7 +29,7 @@ con.connect(err => {
 });
 
 bot.on("message", function(message) {
-       if(message.content.toLowerCase() == "secretcodenotthatsecretitseasy") {
+       if(message.content.toLowerCase() == "try") {
             let xp = Math.floor(Math.random() * 50) + 1;
             message.channel.send(xp);
             con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
