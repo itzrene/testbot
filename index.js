@@ -75,7 +75,7 @@ bot.on("message", function(message) {
        con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, result, fields) {
         console.log("1 record inserted");
         var sql;
-        if(result < 1){
+        if(result[0].length < 1){
             sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', ${candies})`;
         } else {
             let candy = result[0].candy;
