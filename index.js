@@ -49,6 +49,11 @@ bot.on("message", function(message) {
            if (err) throw err;
            console.log(result);
            message.channel.send(result.toString());
+           if(!rows.length){
+            console("hi");
+           } else {
+            console.log("Updated!");
+        }
            });
        }
 });
