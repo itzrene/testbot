@@ -14,7 +14,7 @@ const mysql = require("mysql");
 
 let con = mysql.createConnection({
     port: "3306",
-    host: process.env.host,
+    host: "remotemysql.com",
     user: process.env.user,
     password: process.env.password,
     database: process.env.database
