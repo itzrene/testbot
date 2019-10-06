@@ -10,6 +10,21 @@ let cdseconds = 5;
 const prefix = "!";
 let color = botconfig.color;
 
+const mysql = require("mysql");
+
+var con = mysql.createConnection({
+    Port: "3306",
+    host: "KjUk5xHUnD",
+    user: "KjUk5xHUnD",
+    password: "z1YZjrXEB3",
+    database: "KjUk5xHUnD"
+});
+
+con.connect(err => {
+   if(err) throw err;
+   console.log("Connected to the database!");
+});
+
 //HALLOWEEN SPECIAL
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "happy halloween") {
