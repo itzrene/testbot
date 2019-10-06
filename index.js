@@ -34,8 +34,10 @@ bot.on("message", function(message) {
             message.channel.send(xp);
             con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
                 if (err) {
-                    //throw err;
-                    console.log("friggg");
+                    console.log("THE PROBLEM(S) IS(ARE):");
+                    console.log("---------------------------");
+                    throw err;
+                    console.log("---------------------------");
                 }
             });
         }
