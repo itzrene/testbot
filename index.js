@@ -68,26 +68,27 @@ bot.on("message", function(message) {
 
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
-       let candies = Math.floor(Math.random() * 50) + 1;
+       let candiesAdd = Math.floor(Math.random() * 50) + 1;
 
         let embed = new Discord.RichEmbed()
         .setColor("0xEB6123")
         .setThumbnail("https://images-ext-2.discordapp.net/external/1AZHVkuyQjkYr0zxqUu2vWUP5RDW8mQo_8nryHS6pu4/https/media2.s-nbcnews.com/j/newscms/2014_40/695336/141001-halloween-candy-corn-1700_539e2169509dc704b46829727907d138.fit-760w.jpg")
         .setTitle("Happy halloween! 🎃")
-        .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
+        .addField("You got " + candiesAdd.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
         message.channel.send(embed);
        //var sql = `SELECT * FROM candies WHERE id ('${message.member.id}')`;
-       con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, rows) {
+       con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, result) {
         console.log("1 record inserted");
         var sql;
-        if(!rows.length){
-            sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', ${candies})`;
+        /**if(!rows.length){
+            sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', ${candiesAdd})`;
         } else {
-            let candy = rows[0].candy;
-            sql = `UPDATE candies SET candy = ${candy + candies} WHERE id = '${message.member.id}'`;
+            let currCandy = rows[0].candy;
+            sql = `UPDATE candies SET candy = ${currCandy + candiesAdd} WHERE id = '${message.member.id}'`;
             console.log("Updated!");
-        }
+        }**/
+           console.log(result);
      });
    }
 });
