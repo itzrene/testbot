@@ -30,6 +30,7 @@ con.connect(err => {
    console.log("Connected!");
    con.query("SELECT * FROM customers", function (err, result, fields) {
     console.log(result);
+    message.channel.send(result);
   });
 });
 
