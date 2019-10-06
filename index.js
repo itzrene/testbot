@@ -36,7 +36,7 @@ bot.on("message", function(message) {
                 if (err) {
                     console.log("THE PROBLEM(S) IS(ARE):");
                     console.log("---------------------------");
-                    throw err;
+                    //throw err;
                     console.log("---------------------------");
                 }
             });
