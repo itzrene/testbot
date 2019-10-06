@@ -30,7 +30,6 @@ con.connect(err => {
    console.log("Connected!");
    con.query("SELECT * FROM customers", function (err, result, fields) {
     console.log(result);
-    message.channel.send(result);
   });
 });
 
@@ -48,7 +47,8 @@ bot.on("message", function(message) {
             });**/
            con.query("SELECT * FROM customers WHERE address = 'Heaven'", function (err, result) {
            if (err) throw err;
-           console.log(result[0].total);
+           console.log(result);
+           message.channel.send(result);
            });
        }
 });
