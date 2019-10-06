@@ -70,7 +70,11 @@ bot.on("message", function(message) {
         .setTitle("Happy halloween! 🎃")
         .addField("You got " + candies.toString() + " candies!", "🍫 🍬 🍬 🍭 🍫 🍬 🍭")
 
-  message.channel.send(embed);
+        message.channel.send(embed);
+       var sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', '${candies}')`;
+       con.query(sql, function (err, result) {
+        console.log("1 record inserted");
+     });
    }
 });
 //------------------------
