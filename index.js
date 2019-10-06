@@ -46,10 +46,9 @@ bot.on("message", function(message) {
                 }
             });**/
            console.log("Connected!");
-           var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
-           con.query(sql, function (err, result) {
+           con.query("SELECT * FROM customers", function (err, result, fields) {
            if (err) throw err;
-           console.log("1 record inserted");
+           console.log(result);
            });
        }
 });
