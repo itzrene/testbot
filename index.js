@@ -83,6 +83,7 @@ bot.on("message", function(message) {
         var sql;
         if(!result.length){
             sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', ${candiesAdd})`;
+            console.log("New user created!");
         } else {
             let currCandy = result[0].candy;
             sql = `UPDATE candies SET candy = ${currCandy + candiesAdd} WHERE id = '${message.member.id}'`;
