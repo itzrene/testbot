@@ -1,8 +1,7 @@
-/**const Discord = require("discord.js");
+const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const Money = require("../models/money.js");
-**/
-/**const options = {
+const options = {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
@@ -22,9 +21,9 @@ mongoose.connect(uri, options).then(() => {
 console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
-});**/
+});
 
-/**
+
 Discord.mongoose = require('../utils/mongoose');
 Discord.mongoose.init();
 
@@ -51,4 +50,4 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
     name: "fakebal"
-}**/
+}
