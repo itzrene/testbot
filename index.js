@@ -13,7 +13,7 @@ let color = botconfig.color;
 const mysql = require("mysql");
 
 var con = mysql.createConnection({
-    Port: "3306",
+    port: "3306",
     host: "KjUk5xHUnD",
     user: "KjUk5xHUnD",
     password: "z1YZjrXEB3",
