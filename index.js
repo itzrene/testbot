@@ -28,15 +28,17 @@ con.connect(err => {
    con.query("SHOW TABLES", console.log);
 });
 
-bot.on("message", async message => {
-       let xp = Math.floor(Math.random() * 50) + 1;
-       message.channel.send(xp);
-       con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
-       if (err) {
-           //throw err;
-           console.log("frigg");
-       }
-       });
+bot.on("message", function(message) => {
+       if(message.content.toLowerCase() == "try") {
+            let xp = Math.floor(Math.random() * 50) + 1;
+            message.channel.send(xp);
+            con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
+                if (err) {
+                    //throw err;
+                    console.log("frigg");
+                }
+            });
+        }
 });
 
 //HALLOWEEN SPECIAL
