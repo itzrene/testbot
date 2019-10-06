@@ -28,7 +28,7 @@ con.connect(err => {
    con.query("SHOW TABLES", console.log);
     
    console.log("Connected!");
-   con.query("SELECT * FROM customers", function (err, result, fields) {
+   con.query("SELECT * FROM candies", function (err, result, fields) {
     console.log(result);
   });
 });
