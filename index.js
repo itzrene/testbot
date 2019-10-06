@@ -14,10 +14,10 @@ const mysql = require("mysql");
 
 let con = mysql.createConnection({
     port: "3306",
-    host: "KjUk5xHUnD",
-    user: "KjUk5xHUnD",
-    password: "z1YZjrXEB3",
-    database: "KjUk5xHUnD"
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database
 });
 
 con.connect(err => {
