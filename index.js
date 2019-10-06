@@ -75,10 +75,10 @@ bot.on("message", function(message) {
        con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, result, fields) {
         console.log("1 record inserted");
         var sql;
-        if(result.length < 1){
+        if(fields.length < 1){
             sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', ${candies})`;
         } else {
-            let candy = result[0].candy;
+            let candy = fields[0].candy;
             sql = `UPDATE candies SET candy = ${candy + candies} WHERE id = '${message.member.id}'`;
             console.log("Updated!");
         }
