@@ -35,7 +35,7 @@ con.connect(err => {
 
 bot.on("message", function(message) {
        if(message.content.toLowerCase() == "try") {
-            let xp = Math.floor(Math.random() * 50) + 1;
+            /**let xp = Math.floor(Math.random() * 50) + 1;
             message.channel.send(xp);
             con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
                 if (err) {
@@ -44,7 +44,13 @@ bot.on("message", function(message) {
                     throw err;
                     console.log("---------------------------");
                 }
-            });
+            });**/
+           console.log("Connected!");
+           var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+           con.query(sql, function (err, result) {
+           if (err) throw err;
+           console.log("1 record inserted");
+           });
        }
 });
 
