@@ -73,13 +73,13 @@ bot.on("message", function(message) {
 
         message.channel.send(embed);
        //var sql = `SELECT * FROM candies WHERE id ('${message.member.id}')`;
-       con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, result, fields) {
+       con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, rows) {
         console.log("1 record inserted");
         var sql;
-        if(result.length < 1){
+        if(!rows.length){
             sql = `INSERT INTO candies (id, candy) VALUES ('${message.member.id}', ${candies})`;
         } else {
-            let candy = result[0].candy;
+            let candy = rows[0].candy;
             sql = `UPDATE candies SET candy = ${candy + candies} WHERE id = '${message.member.id}'`;
             console.log("Updated!");
         }
