@@ -47,7 +47,7 @@ bot.on("message", function(message) {
             });**/
            con.query("SELECT * FROM customers WHERE address = 'Heaven'", function (err, result) {
            if (err) throw err;
-           console.log(result);
+           console.log(result[0].total);
            });
        }
 });
