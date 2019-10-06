@@ -72,7 +72,7 @@ bot.on("message", function(message) {
 
         message.channel.send(embed);
        //var sql = `SELECT * FROM candies WHERE id ('${message.member.id}')`;
-       con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, result) {
+       con.query(`SELECT * FROM candies WHERE id ('${message.member.id}')`, function (err, result, fields) {
         console.log("1 record inserted");
         var sql;
         if(result.length < 1){
