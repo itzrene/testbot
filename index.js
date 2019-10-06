@@ -45,7 +45,7 @@ bot.on("message", function(message) {
                     console.log("---------------------------");
                 }
             });**/
-           con.query("SELECT * FROM customers WHERE address = 'Park Lane 38'", function (err, result) {
+           con.query("SELECT * FROM customers WHERE address = 'Heaven'", function (err, result) {
            if (err) throw err;
            console.log(result);
            });
