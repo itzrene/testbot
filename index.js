@@ -26,11 +26,19 @@ con.connect(err => {
    }
    console.log("AAAAAAAAA Connected to the database!");
    con.query("SHOW TABLES", console.log);
+    
+   console.log("Connected!");
+   let sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+   con.query(sql, function (err, result) {
+   if (err) throw err;
+   console.log("Table created");
+   }
+  });
 });
 
 bot.on("message", function(message) {
        if(message.content.toLowerCase() == "try") {
-            /**let xp = Math.floor(Math.random() * 50) + 1;
+            let xp = Math.floor(Math.random() * 50) + 1;
             message.channel.send(xp);
             con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
                 if (err) {
@@ -39,13 +47,7 @@ bot.on("message", function(message) {
                     throw err;
                     console.log("---------------------------");
                 }
-            });**/
-           //if (err) throw err;
-           console.log("Connected!");
-           con.query("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))", (err, result) {
-           //if (err) throw err;
-           console.log("Table created");
-           });
+            });
        }
 });
 
