@@ -139,7 +139,7 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-fs.readdir("./commands/currency/", (err, files) => {
+/**fs.readdir("./commands/currency/", (err, files) => {
 
   if(err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js");
@@ -153,7 +153,7 @@ fs.readdir("./commands/currency/", (err, files) => {
     console.log(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
-});
+});**/
 
 bot.on("message", function(message) {
   if (message.content.toLowerCase() == "hello") {
