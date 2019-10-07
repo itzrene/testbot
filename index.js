@@ -157,10 +157,6 @@ bot.on("message", function(message) {
         DB.query(sql, "ADDED RECORD");
      });
    }
-  /**if (message.content.toLowerCase() == "!candy") {
-    let candies = 
-    message.channel.send(message.author.toString() + ", you have **" + candies + "** candies! 🍬 🍭");
-  }**/
 });
 //------------------------
 
