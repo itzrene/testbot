@@ -10,6 +10,7 @@ const prefix = "!";
 let color = botconfig.color;
 
 const mysql = require("mysql");
+var DB = require('./commands/DB.js');
 
 /**let con = mysql.createConnection({
     connectionLimit : 10,
@@ -36,7 +37,7 @@ con.connect(err => {
 
 
 
-var pool = mysql.createPool({
+/**var pool = mysql.createPool({
     connectionLimit : 10,
     host: "remotemysql.com",
     user: process.env.user,
@@ -87,6 +88,11 @@ var DB = (function () {
 DB.query("SELECT * FROM customers", function (data, error) {
    //callback(data, error);
    console.log("SELECTED");
+});**/
+
+DB.query("SELECT * FROM customers", function (data, error) {
+   //callback(data, error);
+   console.log("SELECTED 2");
 });
 
 
