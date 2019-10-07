@@ -67,7 +67,7 @@ module.exports.run = async (bot, message, args) => {
                     let targetBal = result[0].bal;
             
                     let embed = new Discord.RichEmbed()
-                        .setDescription(target.username + "'s balance is `" + targetBal + "` 🍵!")
+                        .setDescription(target.user.username + "'s balance is `" + targetBal + "` 🍵!")
                         .setColor(color)
                     message.channel.send(embed);
                     console.log("TARGET HAS SOME MONEY");
