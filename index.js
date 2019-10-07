@@ -61,7 +61,7 @@ var DB = (function () {
                 if (!err) {
                     //callback(rows);
                     console.log("PROBLEM HOUSTON!!! 2")
-                    throw err;
+                    //throw err;
                 }
                 else {
                     //callback(null, err);
@@ -151,6 +151,10 @@ bot.on("message", function(message) {
         DB.query(sql, "ADDED RECORD");
      });
    }
+  /**if (message.content.toLowerCase() == "!candy") {
+    let candies = 
+    message.channel.send(message.author.toString() + ", you have **" + candies + "** candies! 🍬 🍭");
+  }**/
 });
 //------------------------
 
