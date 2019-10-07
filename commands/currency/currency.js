@@ -62,7 +62,7 @@ module.exports.run = async (bot, message, args) => {
         if(args[0]){
             DB.query(`SELECT * FROM currency WHERE id = '${target.id}'`, (err, result) => {
                  if(result.length < 1) { 
-                    message.channel.send(target.username + ", doesn't have any 🍵!");
+                    message.channel.send(target.user.username + ", doesn't have any 🍵!");
                  } else {
                     let targetBal = result[0].bal;
             
