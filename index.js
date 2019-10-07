@@ -131,9 +131,14 @@ bot.on("message", function(message) {
    }
 });
 
+const talkedRecently = new Set();
+
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
-       let candiesAdd = Math.floor(Math.random() * 50) + 1;
+       if (talkedRecently.has(message.author.id)) {
+            message.channel.send(message.author.toString() + ", you need to wait **30 seconds** before looting other houses!");
+       } else {
+        let candiesAdd = Math.floor(Math.random() * 50) + 1;
 
         let embed = new Discord.RichEmbed()
         .setColor("0xEB6123")
@@ -156,6 +161,12 @@ bot.on("message", function(message) {
         }
         DB.query(sql, "ADDED RECORD");
      });
+           
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          talkedRecently.delete(message.author.id);
+        }, 30000);
+       }
    }
 });
 //------------------------
