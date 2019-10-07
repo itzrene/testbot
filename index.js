@@ -11,7 +11,7 @@ let color = botconfig.color;
 
 const mysql = require("mysql");
 
-let con = mysql.createConnection({
+/**let con = mysql.createConnection({
     port: "3306",
     host: "remotemysql.com",
     user: process.env.user,
@@ -45,7 +45,7 @@ bot.on("message", function(message) {
                     console.log("---------------------------");
                 }
             });**/
-           con.query("SELECT * FROM customers WHERE address = 'Heaven'", function (err, result) {
+           /**con.query("SELECT * FROM customers WHERE address = 'Heaven'", function (err, result) {
            if (err) throw err;
            console.log(result);
            message.channel.send(result.toString());
@@ -56,7 +56,7 @@ bot.on("message", function(message) {
         }
            });
        }
-});
+});**/
 
 //HALLOWEEN SPECIAL
 bot.on("message", function(message) {
@@ -78,7 +78,7 @@ bot.on("message", function(message) {
 
         message.channel.send(embed);
        //var sql = `SELECT * FROM candies WHERE id ('${message.member.id}')`;
-       con.query(`SELECT * FROM candies WHERE id = '${message.member.id}'`, function (err, result) {
+       /**con.query(`SELECT * FROM candies WHERE id = '${message.member.id}'`, function (err, result) {
         console.log("1 record inserted");
         var sql;
         if(result.length < 1){
@@ -90,7 +90,7 @@ bot.on("message", function(message) {
             console.log("Updated!");
         }
         con.query(sql, console.log);
-     });
+     });**/
    }
 });
 //------------------------
