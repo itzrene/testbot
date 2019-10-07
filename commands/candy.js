@@ -8,8 +8,11 @@ module.exports.run = async (bot, message, args) => {
       console.log("CANDY PROBLEM!!!);
     }**/
     let candy = result[0].candy;
-    if(!result[0]) return message.channel.send(message.author.toString() + ", you don't have any candy! 👻");
-    message.channel.send(message.author.toString() + ", you have **" + candy.toString() + "** candy! 🍬 🍭");
+    if(!result[0]) { 
+      message.channel.send(message.author.toString() + ", you don't have any candy! 👻");
+    } else {
+      message.channel.send(message.author.toString() + ", you have **" + candy.toString() + "** candy! 🍬 🍭");
+    }
   });
 
 }
