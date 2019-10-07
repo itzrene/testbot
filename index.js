@@ -136,7 +136,7 @@ const talkedRecently = new Set();
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
        if (talkedRecently.has(message.author.id)) {
-            message.channel.send(message.author.toString() + ", you need to wait **30 seconds** before looting other houses!");
+            message.channel.send(message.author.toString() + ", you need to wait **30 seconds** before looting other houses! 🏚");
        } else {
         let candiesAdd = Math.floor(Math.random() * 50) + 1;
 
