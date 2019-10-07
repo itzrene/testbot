@@ -7,11 +7,14 @@ module.exports.run = async (bot, message, args) => {
     /**if (err) {
       console.log("CANDY PROBLEM!!!);
     }**/
+    console.log("CANDY SELECTED");
     if(result.length < 1) { 
       message.channel.send(message.author.toString() + ", you don't have any candy! 👻");
+      console.log("DOESNT HAVE ANY CANDY);
     } else {
       let candy = result[0].candy;
       message.channel.send(message.author.toString() + ", you have **" + candy.toString() + "** candy! 🍬 🍭");
+      console.log("HAS SOME CANDY");
     }
   });
 
