@@ -61,6 +61,7 @@ var DB = (function () {
                 if (!err) {
                     //callback(rows);
                     console.log("PROBLEM HOUSTON!!! 2")
+                    throw err;
                 }
                 else {
                     //callback(null, err);
