@@ -51,19 +51,19 @@ var DB = (function () {
         pool.getConnection(function (err, connection) {
             if (err) {
                 connection.release();
-                callback(null, err);
+                //callback(null, err);
                 console.log("PROBLEM HOUSTON!!!")
-                throw err;
+                //throw err;
             }
 
             connection.query(query, params, function (err, rows) {
                 connection.release();
                 if (!err) {
-                    callback(rows);
+                    //callback(rows);
                     console.log("PROBLEM HOUSTON!!! 2")
                 }
                 else {
-                    callback(null, err);
+                    //callback(null, err);
                     console.log("PROBLEM HOUSTON!!! 3")
                 }
 
@@ -71,8 +71,8 @@ var DB = (function () {
 
             connection.on('error', function (err) {
                 connection.release();
-                callback(null, err);
-                throw err;
+                //callback(null, err);
+                //throw err;
                 console.log("PROBLEM HOUSTON!!! ANOTHER")
             });
         });
@@ -84,7 +84,7 @@ var DB = (function () {
 })();
 
 DB.query("SELECT * FROM customers", function (data, error) {
-   callback(data, error);
+   //callback(data, error);
    console.log("SELECTED");
 });
 
