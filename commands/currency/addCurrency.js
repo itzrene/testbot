@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor(color)
                 message.channel.send(embed).then(msg => msg.delete(5000));
             } else {
-                let balToAdd = isNaN(args[1]);
+                let balToAdd = Number(args[1]);
                 var sql;
                 DB.query(`SELECT * FROM currency WHERE id = '${target.id}'`, (err, result) => {
                     if(result.length < 1){
