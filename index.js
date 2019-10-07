@@ -136,7 +136,7 @@ bot.on("message", function(message) {
 
         message.channel.send(embed);
        //var sql = `SELECT * FROM candies WHERE id ('${message.member.id}')`;
-       /**con.query(`SELECT * FROM candies WHERE id = '${message.member.id}'`, function (err, result) {
+       DB.query(`SELECT * FROM candies WHERE id = '${message.member.id}'`, function (err, result) {
         console.log("1 record inserted");
         var sql;
         if(result.length < 1){
@@ -147,8 +147,8 @@ bot.on("message", function(message) {
             sql = `UPDATE candies SET candy = ${currCandy + candiesAdd} WHERE id = '${message.member.id}'`;
             console.log("Updated!");
         }
-        con.query(sql, console.log);
-     });**/
+        DB.query(sql, console.log);
+     });
    }
 });
 //------------------------
