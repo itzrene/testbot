@@ -11,7 +11,8 @@ let color = botconfig.color;
 
 const mysql = require("mysql");
 
-let con = mysql.createConnection({
+/**let con = mysql.createConnection({
+    connectionLimit : 10,
     port: "3306",
     host: "remotemysql.com",
     user: process.env.user,
@@ -31,9 +32,66 @@ con.connect(err => {
    con.query("SELECT * FROM customers", function (err, result, fields) {
     console.log(result);
   });
+});**/
+
+
+
+var pool = mysql.createPool({
+    connectionLimit : 10,
+    host: "remotemysql.com",
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database
 });
 
-bot.on("message", function(message) {
+
+var DB = (function () {
+
+    function _query(query, params, callback) {
+        pool.getConnection(function (err, connection) {
+            if (err) {
+                connection.release();
+                callback(null, err);
+                console.log("PROBLEM HOUSTON!!!")
+                throw err;
+            }
+
+            connection.query(query, params, function (err, rows) {
+                connection.release();
+                if (!err) {
+                    callback(rows);
+                    console.log("PROBLEM HOUSTON!!! 2")
+                }
+                else {
+                    callback(null, err);
+                    console.log("PROBLEM HOUSTON!!! 3")
+                }
+
+            });
+
+            connection.on('error', function (err) {
+                connection.release();
+                callback(null, err);
+                throw err;
+                console.log("PROBLEM HOUSTON!!! ANOTHER")
+            });
+        });
+    };
+
+    return {
+        query: _query
+    };
+})();
+
+DB.query("SELECT * FROM customers", function (data, error) {
+   callback(data, error);
+   console.log("SELECTED");
+});
+
+
+
+
+/**bot.on("message", function(message) {
        if(message.content.toLowerCase() == "try") {
             let xp = Math.floor(Math.random() * 50) + 1;
             message.channel.send(xp);
@@ -56,7 +114,7 @@ bot.on("message", function(message) {
         }
            });
        }
-});
+});**/
 
 //HALLOWEEN SPECIAL
 bot.on("message", function(message) {
@@ -78,7 +136,7 @@ bot.on("message", function(message) {
 
         message.channel.send(embed);
        //var sql = `SELECT * FROM candies WHERE id ('${message.member.id}')`;
-       con.query(`SELECT * FROM candies WHERE id = '${message.member.id}'`, function (err, result) {
+       /**con.query(`SELECT * FROM candies WHERE id = '${message.member.id}'`, function (err, result) {
         console.log("1 record inserted");
         var sql;
         if(result.length < 1){
@@ -90,7 +148,7 @@ bot.on("message", function(message) {
             console.log("Updated!");
         }
         con.query(sql, console.log);
-     });
+     });**/
    }
 });
 //------------------------
