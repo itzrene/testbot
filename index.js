@@ -147,7 +147,7 @@ bot.on("message", function(message) {
             sql = `UPDATE candies SET candy = ${currCandy + candiesAdd} WHERE id = '${message.member.id}'`;
             console.log("Updated!");
         }
-        DB.query(sql, console.log);
+        DB.query(sql, "ADDED RECORD");
      });
    }
 });
