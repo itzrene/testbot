@@ -32,6 +32,6 @@ module.exports.run = async (bot, message, args) => {
 
 }
 
-module.exports.help = {fuck
+module.exports.help = {
   name: "8ball"
 }
