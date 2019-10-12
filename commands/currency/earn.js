@@ -1,9 +1,20 @@
 const Discord = require("discord.js");
+const db = require("quick.db");
 const config = require("../../botconfig.json");
-var DB = require("../../DB.js");
 let color = config.color;
 
+const talkedRecently = new Set();
+
 module.exports.run = async (bot, message, args) => {
+
+    if (talkedRecently.has(message.author.id)) {
+        let embed = new Discord.RichEmbed()
+            .setAuthor( "ERROR", message.author.avatarURL)
+            .setDescription("`Please wait 1 minute before using this command!`")
+            .setColor(color)
+
+        message.channel.send(embed).then(m => m.delete(5000));
+    } else {
 
         var locations = [
             "Magical Forest",
@@ -99,95 +110,70 @@ module.exports.run = async (bot, message, args) => {
         var theTrolls = inTheTrolls();
         var theForgottenCastle = inTheForgottenCastle();
 
-        DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
-
-            let currBal = result[0].bal;
-            let sql;
-
-            if (location == "Old Bay") {
-                if (theOldBay == "nothing") {
-                    amountOldBay = 0;
-                } else {
-                    let embed = new Discord.RichEmbed()
-                        .setDescription(`${message.author}, you went to the ${location} and found ${theOldBay}! \n Selling for ${amountOldBay} 🍵`)
-                        .setColor("BLUE");
-                    message.channel.send(embed);
-
-                    if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountOldBay})`;
-                    } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountOldBay} WHERE id = '${message.author.id}';
-                    }
-                }
-
-            } else if (location == "Magical Forest") {
-                if (theMagicalForest == "nothing") {
-                    amountMagicalForest = 0;
-                } else {
-                    let embed = new Discord.RichEmbed()
-                        .setDescription(`${message.author}, you went to the ${location} and found ${theMagicalForest}! \n Selling for ${amountMagicalForest} 🍵`)
-                        .setColor("GREEN");
-                    message.channel.send(embed);
-
-                    if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountMagicalForest})`;
-                    } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountMagicalForest} WHERE id = '${message.author.id}';
-                    }
-                }
-
-            } else if (location == "witches") {
-                if (theWitches == "nothing") {
-                    amountWitches = 0;
-                } else {
-                    let embed = new Discord.RichEmbed()
-                        .setDescription(`${message.author}, you went to the ${location} and found ${theWitches}! \n Selling for ${amountWitches} 🍵`)
-                        .setColor("PURPLE");
-                    message.channel.send(embed);
-
-                    if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountWitches})`;
-                    } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountWitches} WHERE id = '${message.author.id}';
-                    }
-                }
-
-            } else if (location == "trolls") {
-                if (theTrolls == "nothing") {
-                    amountTrolls = 0;
-                } else {
-                    let embed = new Discord.RichEmbed()
-                        .setDescription(`${message.author}, you went to the ${location} and found ${theTrolls}! \n Selling for ${amountTrolls} 🍵`)
-                        .setColor("GREEN");
-                    message.channel.send(embed);
-
-                    if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountTrolls})`;
-                    } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountTrolls} WHERE id = '${message.author.id}';
-                    }
-                }
-
-            } else if (location == "Forgotten Castle") {
-                if (theForgottenCastle == "nothing") {
-                    amountForgottenCastle = 0;
-                } else {
-                    let embed = new Discord.RichEmbed()
-                        .setDescription(`${message.author}, you went to the ${location} and found ${theForgottenCastle}! \n Selling for ${amountForgottenCastle} 🍵`)
-                        .setColor("GRAY");
-                    message.channel.send(embed);
-
-                    if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountForgottenCastle})`;
-                    } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountForgottenCastle} WHERE id = '${message.author.id}';
-                    }
-                }
-
+        if (location == "Old Bay") {
+            if (theOldBay == "nothing") {
+                amountOldBay = 0;
             }
+            let embed = new Discord.RichEmbed()
+                .setDescription(`${message.author}, you went to the ${location} and found ${theOldBay}! \n Selling for ${amountOldBay} 🍵`)
+                .setColor("BLUE");
+            message.channel.send(embed);
 
-            DB.query(sql, "ADDED RECORD SKSKSK");
-        });
+            db.add(`currency_${message.author.id}`, amountOldBay);
+
+        } else if (location == "Magical Forest") {
+            if (theMagicalForest == "nothing") {
+                amountMagicalForest = 0;
+            }
+            let embed = new Discord.RichEmbed()
+                .setDescription(`${message.author}, you went to the ${location} and found ${theMagicalForest}! \n Selling for ${amountMagicalForest} 🍵`)
+                .setColor("GREEN");
+            message.channel.send(embed);
+
+            db.add(`currency_${message.author.id}`, amountMagicalForest);
+
+        } else if (location == "witches") {
+            if (theWitches == "nothing") {
+                amountWitches = 0;
+            }
+            let embed = new Discord.RichEmbed()
+                .setDescription(`${message.author}, you went to the ${location} and found ${theWitches}! \n Selling for ${amountWitches} 🍵`)
+                .setColor("PURPLE");
+            message.channel.send(embed);
+
+            db.add(`currency_${message.author.id}`, amountWitches);
+
+        } else if (location == "trolls") {
+            if (theTrolls == "nothing") {
+                amountTrolls = 0;
+            }
+            let embed = new Discord.RichEmbed()
+                .setDescription(`${message.author}, you went to the ${location} and found ${theTrolls}! \n Selling for ${amountTrolls} 🍵`)
+                .setColor("GREEN");
+            message.channel.send(embed);
+
+            db.add(`currency_${message.author.id}`, amountTrolls);
+
+        } else if (location == "Forgotten Castle") {
+            if (theForgottenCastle == "nothing") {
+                amountForgottenCastle = 0;
+            }
+            let embed = new Discord.RichEmbed()
+                .setDescription(`${message.author}, you went to the ${location} and found ${theForgottenCastle}! \n Selling for ${amountForgottenCastle} 🍵`)
+                .setColor("GRAY");
+            message.channel.send(embed);
+
+            db.add(`currency_${message.author.id}`, amountForgottenCastle);
+
+        }
+
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+            // Removes the user from the set after a minute
+            talkedRecently.delete(message.author.id);
+        }, 60000);
+    }
+
 }
 
 module.exports.help = {
