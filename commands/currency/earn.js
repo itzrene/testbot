@@ -113,15 +113,15 @@ module.exports.run = async (bot, message, args) => {
         DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
 
             let currBal = result[0].bal;
-            let sql;
+            //let sql;
 
-            function addCur(howMuch) {
+            /**function addCur(howMuch) {
                 if(result.length < 1){
                     return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${howMuch})`;
                 } else {
                     return sql = `UPDATE currency SET bal = ${currBal + howMuch} WHERE id = '${message.author.id}';
                 }
-            };
+            };**/
 
             if (location == "Old Bay") {
                 if (theOldBay == "nothing") {
@@ -132,7 +132,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("BLUE");
                 message.channel.send(embed);
 
-                addCur(amountOldBay);
+                //addCur(amountOldBay);
 
             } else if (location == "Magical Forest") {
                 if (theMagicalForest == "nothing") {
@@ -143,7 +143,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("GREEN");
                 message.channel.send(embed);
 
-                addCur(amountMagicalForest);
+                //addCur(amountMagicalForest);
 
             } else if (location == "witches") {
                 if (theWitches == "nothing") {
@@ -154,7 +154,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("PURPLE");
                 message.channel.send(embed);
 
-                addCur(amountWitches);
+                //addCur(amountWitches);
 
             } else if (location == "trolls") {
                 if (theTrolls == "nothing") {
@@ -165,7 +165,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("GREEN");
                 message.channel.send(embed);
 
-                addCur(amountTrolls);
+                //addCur(amountTrolls);
 
             } else if (location == "Forgotten Castle") {
                 if (theForgottenCastle == "nothing") {
@@ -176,7 +176,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("GRAY");
                 message.channel.send(embed);
 
-                addCur(amountForgottenCastle);
+                //addCur(amountForgottenCastle);
 
             }
 
@@ -186,7 +186,7 @@ module.exports.run = async (bot, message, args) => {
                 talkedRecently.delete(message.author.id);
             }, 60000);
 
-            DB.query(sql, "ADDED RECORD SKSKSK");
+            //DB.query(sql, "ADDED RECORD SKSKSK");
         });
     }
 
