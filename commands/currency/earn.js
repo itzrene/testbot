@@ -163,22 +163,6 @@ module.exports.run = async (bot, message, args) => {
                     }
                 }
 
-            } else if (location == "Forgotten Castle") {
-                if (theForgottenCastle == "nothing") {
-                    amountForgottenCastle = 0;
-                } else {
-                    let embed = new Discord.RichEmbed()
-                        .setDescription(`${message.author}, you went to the ${location} and found ${theForgottenCastle}! \n Selling for ${amountForgottenCastle} 🍵`)
-                        .setColor("GRAY");
-                    message.channel.send(embed);
-
-                    if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountForgottenCastle})`;
-                    } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountForgottenCastle} WHERE id = '${message.author.id}';
-                    }
-                }
-
             }
 
             talkedRecently.add(message.author.id);
