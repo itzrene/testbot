@@ -112,81 +112,81 @@ module.exports.run = async (bot, message, args) => {
 
         DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
 
-        let currBal = result[0].bal;
-        let sql;
+            let currBal = result[0].bal;
+            let sql;
 
-        function addCur(howMuch) {
-            if(result.length < 1){
-                return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${howMuch})`;
-            } else {
-                return sql = `UPDATE currency SET bal = ${currBal + howMuch} WHERE id = '${message.author.id}';
+            function addCur(howMuch) {
+                if(result.length < 1){
+                    return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${howMuch})`;
+                } else {
+                    return sql = `UPDATE currency SET bal = ${currBal + howMuch} WHERE id = '${message.author.id}';
+                }
+            };
+
+            if (location == "Old Bay") {
+                if (theOldBay == "nothing") {
+                    amountOldBay = 0;
+                }
+                let embed = new Discord.RichEmbed()
+                    .setDescription(`${message.author}, you went to the ${location} and found ${theOldBay}! \n Selling for ${amountOldBay} 🍵`)
+                    .setColor("BLUE");
+                message.channel.send(embed);
+
+                addCur(amountOldBay);
+
+            } else if (location == "Magical Forest") {
+                if (theMagicalForest == "nothing") {
+                    amountMagicalForest = 0;
+                }
+                let embed = new Discord.RichEmbed()
+                    .setDescription(`${message.author}, you went to the ${location} and found ${theMagicalForest}! \n Selling for ${amountMagicalForest} 🍵`)
+                    .setColor("GREEN");
+                message.channel.send(embed);
+
+                addCur(amountMagicalForest);
+
+            } else if (location == "witches") {
+                if (theWitches == "nothing") {
+                    amountWitches = 0;
+                }
+                let embed = new Discord.RichEmbed()
+                    .setDescription(`${message.author}, you went to the ${location} and found ${theWitches}! \n Selling for ${amountWitches} 🍵`)
+                    .setColor("PURPLE");
+                message.channel.send(embed);
+
+                addCur(amountWitches);
+
+            } else if (location == "trolls") {
+                if (theTrolls == "nothing") {
+                    amountTrolls = 0;
+                }
+                let embed = new Discord.RichEmbed()
+                    .setDescription(`${message.author}, you went to the ${location} and found ${theTrolls}! \n Selling for ${amountTrolls} 🍵`)
+                    .setColor("GREEN");
+                message.channel.send(embed);
+
+                addCur(amountTrolls);
+
+            } else if (location == "Forgotten Castle") {
+                if (theForgottenCastle == "nothing") {
+                    amountForgottenCastle = 0;
+                }
+                let embed = new Discord.RichEmbed()
+                    .setDescription(`${message.author}, you went to the ${location} and found ${theForgottenCastle}! \n Selling for ${amountForgottenCastle} 🍵`)
+                    .setColor("GRAY");
+                message.channel.send(embed);
+
+                addCur(amountForgottenCastle);
+
             }
-        }
 
-        if (location == "Old Bay") {
-            if (theOldBay == "nothing") {
-                amountOldBay = 0;
-            }
-            let embed = new Discord.RichEmbed()
-                .setDescription(`${message.author}, you went to the ${location} and found ${theOldBay}! \n Selling for ${amountOldBay} 🍵`)
-                .setColor("BLUE");
-            message.channel.send(embed);
+            talkedRecently.add(message.author.id);
+            setTimeout(() => {
+                // Removes the user from the set after a minute
+                talkedRecently.delete(message.author.id);
+            }, 60000);
 
-            addCur(amountOldBay);
-
-        } else if (location == "Magical Forest") {
-            if (theMagicalForest == "nothing") {
-                amountMagicalForest = 0;
-            }
-            let embed = new Discord.RichEmbed()
-                .setDescription(`${message.author}, you went to the ${location} and found ${theMagicalForest}! \n Selling for ${amountMagicalForest} 🍵`)
-                .setColor("GREEN");
-            message.channel.send(embed);
-
-            addCur(amountMagicalForest);
-
-        } else if (location == "witches") {
-            if (theWitches == "nothing") {
-                amountWitches = 0;
-            }
-            let embed = new Discord.RichEmbed()
-                .setDescription(`${message.author}, you went to the ${location} and found ${theWitches}! \n Selling for ${amountWitches} 🍵`)
-                .setColor("PURPLE");
-            message.channel.send(embed);
-
-            addCur(amountWitches);
-
-        } else if (location == "trolls") {
-            if (theTrolls == "nothing") {
-                amountTrolls = 0;
-            }
-            let embed = new Discord.RichEmbed()
-                .setDescription(`${message.author}, you went to the ${location} and found ${theTrolls}! \n Selling for ${amountTrolls} 🍵`)
-                .setColor("GREEN");
-            message.channel.send(embed);
-
-            addCur(amountTrolls);
-
-        } else if (location == "Forgotten Castle") {
-            if (theForgottenCastle == "nothing") {
-                amountForgottenCastle = 0;
-            }
-            let embed = new Discord.RichEmbed()
-                .setDescription(`${message.author}, you went to the ${location} and found ${theForgottenCastle}! \n Selling for ${amountForgottenCastle} 🍵`)
-                .setColor("GRAY");
-            message.channel.send(embed);
-
-            addCur(amountForgottenCastle);
-
-        }
-
-        talkedRecently.add(message.author.id);
-        setTimeout(() => {
-            // Removes the user from the set after a minute
-            talkedRecently.delete(message.author.id);
-        }, 60000);
-
-        DB.query(sql, "ADDED RECORD SKSKSK");
+            DB.query(sql, "ADDED RECORD SKSKSK");
         });
     }
 
