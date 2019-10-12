@@ -3,18 +3,7 @@ const config = require("../../botconfig.json");
 var DB = require("../../DB.js");
 let color = config.color;
 
-const talkedRecently = new Set();
-
 module.exports.run = async (bot, message, args) => {
-
-    if (talkedRecently.has(message.author.id)) {
-        let embed = new Discord.RichEmbed()
-            .setAuthor( "ERROR", message.author.avatarURL)
-            .setDescription("`Please wait 1 minute before using this command!`")
-            .setColor(color)
-
-        message.channel.send(embed).then(m => m.delete(5000));
-    } else {
 
         var locations = [
             "Magical Forest",
@@ -163,18 +152,42 @@ module.exports.run = async (bot, message, args) => {
                     }
                 }
 
-            }
+            } else if (location == "trolls") {
+                if (theTrolls == "nothing") {
+                    amountTrolls = 0;
+                } else {
+                    let embed = new Discord.RichEmbed()
+                        .setDescription(`${message.author}, you went to the ${location} and found ${theTrolls}! \n Selling for ${amountTrolls} 🍵`)
+                        .setColor("GREEN");
+                    message.channel.send(embed);
 
-            talkedRecently.add(message.author.id);
-            setTimeout(() => {
-                // Removes the user from the set after a minute
-                talkedRecently.delete(message.author.id);
-            }, 60000);
+                    if(result.length < 1){
+                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountTrolls})`;
+                    } else {
+                        return sql = `UPDATE currency SET bal = ${currBal + amountTrolls} WHERE id = '${message.author.id}';
+                    }
+                }
+
+            } else if (location == "Forgotten Castle") {
+                if (theForgottenCastle == "nothing") {
+                    amountForgottenCastle = 0;
+                } else {
+                    let embed = new Discord.RichEmbed()
+                        .setDescription(`${message.author}, you went to the ${location} and found ${theForgottenCastle}! \n Selling for ${amountForgottenCastle} 🍵`)
+                        .setColor("GRAY");
+                    message.channel.send(embed);
+
+                    if(result.length < 1){
+                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountForgottenCastle})`;
+                    } else {
+                        return sql = `UPDATE currency SET bal = ${currBal + amountForgottenCastle} WHERE id = '${message.author.id}';
+                    }
+                }
+
+            }
 
             DB.query(sql, "ADDED RECORD SKSKSK");
         });
-    }
-
 }
 
 module.exports.help = {
