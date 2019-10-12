@@ -113,15 +113,7 @@ module.exports.run = async (bot, message, args) => {
         DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
 
             let currBal = result[0].bal;
-            //let sql;
-
-            /**function addCur(howMuch) {
-                if(result.length < 1){
-                    return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${howMuch})`;
-                } else {
-                    return sql = `UPDATE currency SET bal = ${currBal + howMuch} WHERE id = '${message.author.id}';
-                }
-            };**/
+            let sql;
 
             if (location == "Old Bay") {
                 if (theOldBay == "nothing") {
@@ -132,7 +124,11 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("BLUE");
                 message.channel.send(embed);
 
-                //addCur(amountOldBay);
+                if(result.length < 1){
+                    return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountOldBay})`;
+                } else {
+                    return sql = `UPDATE currency SET bal = ${currBal + amountOldBay} WHERE id = '${message.author.id}';
+                }
 
             } else if (location == "Magical Forest") {
                 if (theMagicalForest == "nothing") {
@@ -143,7 +139,11 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("GREEN");
                 message.channel.send(embed);
 
-                //addCur(amountMagicalForest);
+                if(result.length < 1){
+                    return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountMagicalForest})`;
+                else {
+                    return sql = `UPDATE currency SET bal = ${currBal + amountMagicalForest} WHERE id = '${message.author.id}';
+                }
 
             } else if (location == "witches") {
                 if (theWitches == "nothing") {
@@ -154,7 +154,11 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("PURPLE");
                 message.channel.send(embed);
 
-                //addCur(amountWitches);
+                if(result.length < 1){
+                    return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountWitches})`;
+                } else {
+                    return sql = `UPDATE currency SET bal = ${currBal + amountWitches} WHERE id = '${message.author.id}';
+                }
 
             } else if (location == "trolls") {
                 if (theTrolls == "nothing") {
@@ -165,7 +169,11 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("GREEN");
                 message.channel.send(embed);
 
-                //addCur(amountTrolls);
+                if(result.length < 1){
+                    return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountTrolls})`;
+                } else {
+                    return sql = `UPDATE currency SET bal = ${currBal + amountTrolls} WHERE id = '${message.author.id}';
+                }
 
             } else if (location == "Forgotten Castle") {
                 if (theForgottenCastle == "nothing") {
@@ -176,7 +184,11 @@ module.exports.run = async (bot, message, args) => {
                     .setColor("GRAY");
                 message.channel.send(embed);
 
-                //addCur(amountForgottenCastle);
+                if(result.length < 1){
+                    return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountForgottenCastle})`;
+                } else {
+                    return sql = `UPDATE currency SET bal = ${currBal + amountForgottenCastle} WHERE id = '${message.author.id}';
+                }
 
             }
 
@@ -186,7 +198,7 @@ module.exports.run = async (bot, message, args) => {
                 talkedRecently.delete(message.author.id);
             }, 60000);
 
-            //DB.query(sql, "ADDED RECORD SKSKSK");
+            DB.query(sql, "ADDED RECORD SKSKSK");
         });
     }
 
