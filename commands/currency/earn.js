@@ -125,9 +125,9 @@ module.exports.run = async (bot, message, args) => {
                     message.channel.send(embed);
 
                     if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountOldBay})`;
+                        sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountOldBay})`;
                     } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountOldBay} WHERE id = '${message.author.id}'`;
+                        sql = `UPDATE currency SET bal = ${currBal + amountOldBay} WHERE id = '${message.author.id}'`;
                     }
                 }
 
@@ -141,9 +141,9 @@ module.exports.run = async (bot, message, args) => {
                     message.channel.send(embed);
 
                     if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountMagicalForest})`;
+                        sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountMagicalForest})`;
                     } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountMagicalForest} WHERE id = '${message.author.id}'`;
+                        sql = `UPDATE currency SET bal = ${currBal + amountMagicalForest} WHERE id = '${message.author.id}'`;
                     }
                 }
 
@@ -157,9 +157,9 @@ module.exports.run = async (bot, message, args) => {
                     message.channel.send(embed);
 
                     if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountWitches})`;
+                        sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountWitches})`;
                     } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountWitches} WHERE id = '${message.author.id}'`;
+                        sql = `UPDATE currency SET bal = ${currBal + amountWitches} WHERE id = '${message.author.id}'`;
                     }
                 }
 
@@ -173,9 +173,9 @@ module.exports.run = async (bot, message, args) => {
                     message.channel.send(embed);
 
                     if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountTrolls})`;
+                        sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountTrolls})`;
                     } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountTrolls} WHERE id = '${message.author.id}'`;
+                        sql = `UPDATE currency SET bal = ${currBal + amountTrolls} WHERE id = '${message.author.id}'`;
                     }
                 }
 
@@ -189,9 +189,9 @@ module.exports.run = async (bot, message, args) => {
                     message.channel.send(embed);
 
                     if(result.length < 1){
-                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountForgottenCastle})`;
+                        sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountForgottenCastle})`;
                     } else {
-                        return sql = `UPDATE currency SET bal = ${currBal + amountForgottenCastle} WHERE id = '${message.author.id}'`;
+                        sql = `UPDATE currency SET bal = ${currBal + amountForgottenCastle} WHERE id = '${message.author.id}'`;
                     }
                 }
 
