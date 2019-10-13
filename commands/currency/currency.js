@@ -70,7 +70,7 @@ module.exports.run = async (bot, message, args) => {
                         .setDescription(target.user.username + "'s balance is `" + targetBal + "` 🍵!")
                         .setColor(color)
                     message.channel.send(embed);
-                    console.log("TARGET HAS SOME MONEY");
+                    //console.log("TARGET HAS SOME MONEY");
                 }
            });
         } else {
@@ -85,7 +85,7 @@ module.exports.run = async (bot, message, args) => {
                         .setDescription("Your balance is `" + bal + "` 🍵!")
                         .setColor(color)
                     message.channel.send(embed);
-                    console.log("HAS SOME MONEY");
+                    //console.log("HAS SOME MONEY");
                 }
                 
            });
