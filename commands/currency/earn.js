@@ -110,10 +110,10 @@ module.exports.run = async (bot, message, args) => {
         var theTrolls = inTheTrolls();
         var theForgottenCastle = inTheForgottenCastle();
 
+        var sql;
         DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
 
-            let currBal = result[0].bal;
-            let sql;
+            //let currBal = result[0].bal;
 
             if (location == "Old Bay") {
                 if (theOldBay == "nothing") {
@@ -127,6 +127,7 @@ module.exports.run = async (bot, message, args) => {
                     if(result.length < 1){
                         sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountOldBay})`;
                     } else {
+                        let currBal = result[0].bal;
                         sql = `UPDATE currency SET bal = ${currBal + amountOldBay} WHERE id = '${message.author.id}'`;
                     }
                 }
@@ -143,6 +144,7 @@ module.exports.run = async (bot, message, args) => {
                     if(result.length < 1){
                         sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountMagicalForest})`;
                     } else {
+                        let currBal = result[0].bal;
                         sql = `UPDATE currency SET bal = ${currBal + amountMagicalForest} WHERE id = '${message.author.id}'`;
                     }
                 }
@@ -159,6 +161,7 @@ module.exports.run = async (bot, message, args) => {
                     if(result.length < 1){
                         sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountWitches})`;
                     } else {
+                        let currBal = result[0].bal;
                         sql = `UPDATE currency SET bal = ${currBal + amountWitches} WHERE id = '${message.author.id}'`;
                     }
                 }
@@ -175,6 +178,7 @@ module.exports.run = async (bot, message, args) => {
                     if(result.length < 1){
                         sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountTrolls})`;
                     } else {
+                        let currBal = result[0].bal;
                         sql = `UPDATE currency SET bal = ${currBal + amountTrolls} WHERE id = '${message.author.id}'`;
                     }
                 }
@@ -191,6 +195,7 @@ module.exports.run = async (bot, message, args) => {
                     if(result.length < 1){
                         sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountForgottenCastle})`;
                     } else {
+                        let currBal = result[0].bal;
                         sql = `UPDATE currency SET bal = ${currBal + amountForgottenCastle} WHERE id = '${message.author.id}'`;
                     }
                 }
