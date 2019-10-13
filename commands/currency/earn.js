@@ -110,8 +110,6 @@ module.exports.run = async (bot, message, args) => {
         var theTrolls = inTheTrolls();
         var theForgottenCastle = inTheForgottenCastle();
 
-        DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
-
             let currBal = result[0].bal;
             let sql;
 
@@ -128,6 +126,22 @@ module.exports.run = async (bot, message, args) => {
                         return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountOldBay})`;
                     } else {
                         return sql = `UPDATE currency SET bal = ${currBal + amountOldBay} WHERE id = '${message.author.id}';
+                    }
+                }
+
+            } else if (location == "Magical Forest") {
+                if (theMagicalForest == "nothing") {
+                    amountMagicalForest = 0;
+                } else {
+                    let embed = new Discord.RichEmbed()
+                        .setDescription(`${message.author}, you went to the ${location} and found ${theMagicalForest}! \n Selling for ${amountMagicalForest} 🍵`)
+                        .setColor("GREEN");
+                    message.channel.send(embed);
+
+                    if(result.length < 1){
+                        return sql = `INSERT INTO currency (id, bal) VALUES ('${message.author.id}', ${amountMagicalForest})`;
+                    } else {
+                        return sql = `UPDATE currency SET bal = ${currBal + amountMagicalForest} WHERE id = '${message.author.id}';
                     }
                 }
 
@@ -187,8 +201,6 @@ module.exports.run = async (bot, message, args) => {
                 talkedRecently.delete(message.author.id);
             }, 60000);
 
-            DB.query(sql, "ADDED RECORD SKSKSK");
-        });
     }
 
 }
