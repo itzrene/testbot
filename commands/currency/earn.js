@@ -112,7 +112,6 @@ module.exports.run = async (bot, message, args) => {
 
         DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
 
-        if(result.length < 1){
             let currBal = result[0].bal;
             let sql;
 
@@ -205,9 +204,6 @@ module.exports.run = async (bot, message, args) => {
             }, 60000);
 
             DB.query(sql, "ADDED RECORD SKSKSK");
-        } else {
-            message.channel.send("a noob lol");
-        }
         });
     }
 
