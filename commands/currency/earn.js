@@ -112,13 +112,14 @@ module.exports.run = async (bot, message, args) => {
 
         DB.query(`SELECT * FROM currency WHERE id = '${message.author.id}'`, (err, result) => {
 
+        if(result.length < 1){
+            let currBal = result[0].bal;
             let sql;
 
             if (location == "Old Bay") {
                 if (theOldBay == "nothing") {
                     amountOldBay = 0;
                 } else {
-                    let currBal = result[0].bal;
                     let embed = new Discord.RichEmbed()
                         .setDescription(`${message.author}, you went to the ${location} and found ${theOldBay}! \n Selling for ${amountOldBay} 🍵`)
                         .setColor("BLUE");
@@ -135,7 +136,6 @@ module.exports.run = async (bot, message, args) => {
                 if (theMagicalForest == "nothing") {
                     amountMagicalForest = 0;
                 } else {
-                    let currBal = result[0].bal;
                     let embed = new Discord.RichEmbed()
                         .setDescription(`${message.author}, you went to the ${location} and found ${theMagicalForest}! \n Selling for ${amountMagicalForest} 🍵`)
                         .setColor("GREEN");
@@ -152,7 +152,6 @@ module.exports.run = async (bot, message, args) => {
                 if (theWitches == "nothing") {
                     amountWitches = 0;
                 } else {
-                    let currBal = result[0].bal;
                     let embed = new Discord.RichEmbed()
                         .setDescription(`${message.author}, you went to the ${location} and found ${theWitches}! \n Selling for ${amountWitches} 🍵`)
                         .setColor("PURPLE");
@@ -169,7 +168,6 @@ module.exports.run = async (bot, message, args) => {
                 if (theTrolls == "nothing") {
                     amountTrolls = 0;
                 } else {
-                    let currBal = result[0].bal;
                     let embed = new Discord.RichEmbed()
                         .setDescription(`${message.author}, you went to the ${location} and found ${theTrolls}! \n Selling for ${amountTrolls} 🍵`)
                         .setColor("GREEN");
@@ -186,7 +184,6 @@ module.exports.run = async (bot, message, args) => {
                 if (theForgottenCastle == "nothing") {
                     amountForgottenCastle = 0;
                 } else {
-                    let currBal = result[0].bal;
                     let embed = new Discord.RichEmbed()
                         .setDescription(`${message.author}, you went to the ${location} and found ${theForgottenCastle}! \n Selling for ${amountForgottenCastle} 🍵`)
                         .setColor("GRAY");
@@ -208,6 +205,9 @@ module.exports.run = async (bot, message, args) => {
             }, 60000);
 
             DB.query(sql, "ADDED RECORD SKSKSK");
+        } else {
+            message.channel.send("a noob lol");
+        }
         });
     }
 
