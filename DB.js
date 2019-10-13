@@ -17,7 +17,6 @@ var DB = (function () {
                 connection.release();
                 //callback(null, err);
                 console.log("PROBLEM HOUSTON!!!")
-                console.log(err);
                 //throw err;
             }
 
@@ -25,14 +24,12 @@ var DB = (function () {
                 connection.release();
                 if (!err) {
                     //callback(rows);
-                    console.log("PROBLEM HOUSTON!!! 2")
-                    console.log(err);
+                    //console.log("PROBLEM HOUSTON!!! 2")
                     //throw err;
                 }
                 else {
                     //callback(null, err);
-                    console.log("PROBLEM HOUSTON!!! 3")
-                    console.log(err);
+                    //console.log("PROBLEM HOUSTON!!! 3")
                 }
 
             });
