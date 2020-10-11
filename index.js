@@ -89,11 +89,11 @@ DB.query("SELECT * FROM customers", function (data, error) {
    //callback(data, error);
    console.log("SELECTED");
 });**/
-//HERE \/
-/**DB.query("SELECT * FROM customers", function (data, error) {
+
+DB.query("SELECT * FROM customers", function (data, error) {
    //callback(data, error);
    console.log("SELECTED 2");
-});**/
+});
 
 
 
