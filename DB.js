@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+/**const mysql = require("mysql");
 
 var pool = mysql.createPool({
     connectionLimit : 10,
@@ -55,3 +55,4 @@ DB.query("SELECT * FROM customers", function (data, error) {
 });
 
 module.exports = DB;
+/**
