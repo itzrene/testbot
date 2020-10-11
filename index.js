@@ -89,11 +89,11 @@ DB.query("SELECT * FROM customers", function (data, error) {
    //callback(data, error);
    console.log("SELECTED");
 });**/
-
-DB.query("SELECT * FROM customers", function (data, error) {
+//HERE \/
+/**DB.query("SELECT * FROM customers", function (data, error) {
    //callback(data, error);
    console.log("SELECTED 2");
-});
+});**/
 
 
 
@@ -132,7 +132,6 @@ bot.on("message", function(message) {
 });
 
 const talkedRecently = new Set();
-
 bot.on("message", function(message) {
    if (message.content.toLowerCase() == "trick or treat") {
        if (talkedRecently.has(message.author.id)) {
